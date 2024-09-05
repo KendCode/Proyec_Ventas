@@ -24,7 +24,7 @@ session_start();
 <form action="" method="post">
 
 	<h3>Ingrese el numero de cedula de identidad del estudiante que esta buscando</h3>
-	<input type="email" name="email">
+	<input type="number" name="id_producto">
 	<input type="submit" name="btn1" value="BUSCAR">
 
 
@@ -33,10 +33,10 @@ session_start();
 
 
 <?php
-$email=$_POST['email'];
+$id_producto=$_POST['id_producto'];
 
 //primer paso
-$consulta="SELECT * FROM usuario WHERE email = '$email'";
+$consulta="SELECT * FROM producto WHERE id_producto = '$id_producto'";
 //$consulta="SELECT * FROM ventas";
 //segunda paso 
 $respuesta=mysqli_query($conexion,$consulta);
@@ -46,8 +46,8 @@ $respuesta=mysqli_query($conexion,$consulta);
 while($fila=mysqli_fetch_array($respuesta))
 {
 
-echo "el ci buscado es: ".$fila['email'];
-echo "el nombre del buscado es: ".$fila['nombre'];
+echo "el id del producto buscado es: ".$fila['id_producto'];
+echo "Descripcion del producto buscado es: ".$fila['descrip_producto'];
 ?>
 <!-- 
 <table border="2">
