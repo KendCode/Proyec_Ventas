@@ -5,8 +5,7 @@
 
 include("conexion/conexion.php");
 session_start();
-echo "bienvenido usuario: ".$_SESSION['admin'];
-echo "<br>con nombre: ".$_SESSION['nombre'];
+
 //include("bloqueo.php");
 ?>
 
@@ -37,8 +36,8 @@ echo "<br>con nombre: ".$_SESSION['nombre'];
 $email=$_POST['email'];
 
 //primer paso
-//$consulta="SELECT * FROM usuario WHERE email = '$email'";
-$consulta="SELECT * FROM ventas";
+$consulta="SELECT * FROM usuario WHERE email = '$email'";
+//$consulta="SELECT * FROM ventas";
 //segunda paso 
 $respuesta=mysqli_query($conexion,$consulta);
 
@@ -47,7 +46,7 @@ $respuesta=mysqli_query($conexion,$consulta);
 while($fila=mysqli_fetch_array($respuesta))
 {
 
-echo "el ci buscado es: ".$fila['ci'];
+echo "el ci buscado es: ".$fila['email'];
 echo "el nombre del buscado es: ".$fila['nombre'];
 ?>
 <!-- 
@@ -68,26 +67,26 @@ echo "el nombre del buscado es: ".$fila['nombre'];
 
 	</tr>
 	<tr>
-		<td><?php echo $fila['ci'];?></td>
-		<td><?php echo $fila['nombre'];?></td>
-			<td><?php echo $fila['ap_pat'];?></td>
-			<td><?php echo $fila['ap_mat'];?></td>
-			<td><?php echo $fila['genero'];?></td>
-			<td><?php echo $fila['edad'];?></td>
-			<td><?php echo $fila['celular'];?></td>
-			<td><?php echo $fila['contrasena'];?></td>
-			<td><?php echo $fila['id_sesion'];?></td>
-			<?php $ci=$fila['ci']; 
+		<td><?php //echo $fila['ci'];?></td>
+		<td><?php //echo $fila['nombre'];?></td>
+			<td><?php //echo $fila['ap_pat'];?></td>
+			<td><?php //echo $fila['ap_mat'];?></td>
+			<td><?php //echo $fila['genero'];?></td>
+			<td><?php //echo $fila['edad'];?></td>
+			<td><?php //echo $fila['celular'];?></td>
+			<td><?php //echo $fila['contrasena'];?></td>
+			<td><?php //echo $fila['id_sesion'];?></td>
+			<?php //$ci=$fila['ci']; 
 			//echo "el ci buscado es: ".$ci;
 			?>
 
 			<td><form action="control/abm.php" method="post">
-				<input type="hidden" name="ci" value="<?php echo $ci;?>">
+				<input type="hidden" name="ci" value="<?php //echo $ci;?>">
 			<input type="submit" name="btn1" value="ELIMINAR">	
 			</form></td>
 			<td>
 				<form action="modificar.php" method="post">
-				<input type="hidden" name="ci" value="<?php echo $ci;?>">
+				<input type="hidden" name="ci" value="<?php// echo $ci;?>">
 			<input type="submit" name="btn2" value="MODIFICAR">	
 			</form>
 			</td>
