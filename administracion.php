@@ -23,7 +23,8 @@ session_start();
 
 <form action="" method="post">
 
-	<h3>Ingrese el numero de cedula de identidad del estudiante que esta buscando</h3>
+	<h3>Ingrese el id del producto que esta buscando</h3>
+
 	<input type="number" name="id_producto">
 	<input type="submit" name="btn1" value="BUSCAR">
 
