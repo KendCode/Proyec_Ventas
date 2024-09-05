@@ -1,8 +1,4 @@
 
-
-    <?php
-include("encabezado.html");
-?>
 </head>
 <body>
 <?php
@@ -21,7 +17,7 @@ echo "<br>con nombre: ".$_SESSION['nombre'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ADMINISTRACION</title>
 </head>
 <body>
     
@@ -29,7 +25,7 @@ echo "<br>con nombre: ".$_SESSION['nombre'];
 <form action="" method="post">
 
 	<h3>Ingrese el numero de cedula de identidad del estudiante que esta buscando</h3>
-	<input type="number" name="ci">
+	<input type="email" name="email">
 	<input type="submit" name="btn1" value="BUSCAR">
 
 
@@ -38,12 +34,11 @@ echo "<br>con nombre: ".$_SESSION['nombre'];
 
 
 <?php
-$ci=$_POST['ci'];
-
+$email=$_POST['email'];
 
 //primer paso
-$consulta="SELECT * FROM estudiante WHERE ci = '$ci'";
-//$consulta="SELECT * FROM estudiante";
+//$consulta="SELECT * FROM usuario WHERE email = '$email'";
+$consulta="SELECT * FROM ventas";
 //segunda paso 
 $respuesta=mysqli_query($conexion,$consulta);
 
@@ -52,10 +47,10 @@ $respuesta=mysqli_query($conexion,$consulta);
 while($fila=mysqli_fetch_array($respuesta))
 {
 
-//echo "el ci buscado es: ".$fila['ci'];
-//echo "el nombre del buscado es: ".$fila['nombre'];
+echo "el ci buscado es: ".$fila['ci'];
+echo "el nombre del buscado es: ".$fila['nombre'];
 ?>
-
+<!-- 
 <table border="2">
 
 	<tr>
@@ -100,7 +95,7 @@ while($fila=mysqli_fetch_array($respuesta))
 
 
 </table>
-
+ -->
 
 
 <?php
@@ -109,14 +104,14 @@ while($fila=mysqli_fetch_array($respuesta))
 
 ?>
 
-
+<!-- 
 <p>REGISTRO DE NUEVO ESTUDIANTE</p>
 <form action="registro.php">
 	
 	<input type="submit" value="REGISTRAR NUEVO ESTUDIANTE">
 </form>
 
-
+ -->
 
 
 
