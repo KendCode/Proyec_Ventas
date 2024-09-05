@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario HTML con PHP</title>
+</head>
+<body>
+    <div class="form-container">
+        <form action="operar.php" method="post">
+            <div class="form-row">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div class="form-row">
+                <label>Género:</label>
+                <div class="options">
+                    <label><input type="radio" id="masculino" name="genero" value="masculino" title="genero"> Masculino</label>
+                    <label><input type="radio" id="femenino" name="genero" value="femenino" title="femenino"> Femenino</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="intereses">Intereses:</label>
+                <div class="options">
+                    <label><input type="checkbox" id="deportes" name="intereses[]" value="deportes"> Deportes</label>
+                    <label><input type="checkbox" id="lectura" name="intereses[]" value="lectura"> Lectura</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <label>Subir archivo:</label>
+                <input type="file" name="file" id="file" title="archivo">
+            </div>
+            <div class="form-row">
+                <input type="hidden" id="secreto" name="secreto" value="valor_secreto">
+            </div>
+            <div class="form-row">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena">
+            </div>
+            <div class="form-row">
+                <label for="paises">Países:</label>
+                <select name="paises" id="paises" title="h">
+                    <option value="argentina">Argentina</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="chile">Chile</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="frutas">Elige las frutas que te gusten:</label>
+                <select id="frutas" name="frutas[]" multiple title="s">
+                    <option value="manzana">Manzana</option>
+                    <option value="naranja">Naranja</option>
+                    <option value="platano">Plátano</option>
+                    <option value="uva">Uva</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <h3>Escribe tus comentarios aquí...</h3>
+                <textarea id="comentarios" name="comentarios" rows="4" cols="50" title="texarea"></textarea>
+            </div>
+            <div class="form-row button-group">
+                <button type="reset">Limpiar</button>
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
