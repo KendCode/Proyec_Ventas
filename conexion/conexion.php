@@ -3,7 +3,7 @@ $usuario ="root";
 
 $contrasena ="";
 
-$bd_datos="itbm";
+$bd_datos="ventas";
 
 $servidor ="localhost";
 
