@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-	<title>Usuarios</title>
+	<title>Productos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
 	<!-- SideBar -->
 	<section class="full-box cover dashboard-sideBar">
@@ -32,22 +34,16 @@
 			<!-- SideBar Menu -->
 			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
 				<li>
-					<a href="PanelAdmin.html">
+					<a href="../administracion.php">
 						<i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i>Panel
 					</a>
 				</li>
 				<li>
-					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-case zmdi-hc-fw"></i> Administración <i class="zmdi zmdi-caret-down pull-right"></i>
-					</a>
-					<ul class="list-unstyled full-box">
-						<li>
-							<a href="productos.html"><i class="zmdi zmdi-mall"></i>  Productos</a>
-						</li>
-						<li>
-							<a href="usuarios.html"><i class="zmdi zmdi-account"></i>  Usuarios</a>
-						</li>
-					</ul>
+				<li>
+					<a href="../admin/productos.php"><i class="zmdi zmdi-mall"></i> Productos</a>
+				</li>
+				<li>
+					<a href="../admin/usuarios.php"><i class="zmdi zmdi-account"></i> Usuarios</a>
 				</li>
 			</ul>
 		</div>
@@ -70,48 +66,47 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Administrador <small>USUARIOS</small></h1>
+				<h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Administrador <small>PRODUCTOS</small></h1>
 			</div>
 		</div>
 
 		<div class="container-fluid">
 			<ul class="breadcrumb breadcrumb-tabs">
-			  	<li>
-			  		<a href="admin.html" class="btn btn-info">
-			  			<i class="zmdi zmdi-plus"></i> &nbsp; NUEVO USUARIO
-			  		</a>
-			  	</li>
-			  	<li>
-			  		<a href="admin-list.html" class="btn btn-success">
-			  			<i class="zmdi zmdi-format-list-bulleted"></i> &nbsp; LISTA DE USUARIOS
-			  		</a>
-			  	</li>
+				<li>
+					<a href="admin.html" class="btn btn-info">
+						<i class="zmdi zmdi-plus"></i> &nbsp; NUEVO PRODUCTO
+					</a>
+				</li>
+				<li>
+					<a href="admin-list.html" class="btn btn-success">
+						<i class="zmdi zmdi-format-list-bulleted"></i> &nbsp; LISTA DE PRODUCTOS
+					</a>
+				</li>
 			</ul>
 		</div>
-
-		<div class="container-fluid">
-			<form class="well">
-				<div class="row">
-					<div class="col-xs-12 col-md-8 col-md-offset-2">
-						<div class="form-group label-floating">
-							<span class="control-label">¿A quién estas buscando?</span>
-							<input class="form-control" type="text" name="search_admin_init" required="" title="Buscar">
-						</div>
-					</div>
-					<div class="col-xs-12">
-						<p class="text-center">
-							<button type="submit" class="btn btn-primary btn-raised btn-sm"><i class="zmdi zmdi-search"></i> &nbsp; Buscar</button>
-						</p>
+		<div class="container-fluid"></div>
+		<form class="well">
+			<div class="row">
+				<div class="col-xs-12 col-md-8 col-md-offset-2">
+					<div class="form-group label-floating">
+						<span class="control-label">¿Qué estas buscando?</span>
+						<input class="form-control" type="text" name="search_admin_init" required="" title="Buscar">
 					</div>
 				</div>
-			</form>
+				<div class="col-xs-12">
+					<p class="text-center">
+						<button type="submit" class="btn btn-primary btn-raised btn-sm"><i class="zmdi zmdi-search"></i> &nbsp; Buscar</button>
+					</p>
+				</div>
+			</div>
+		</form>
 		</div>
-		
+
 		<!-- Panel listado de busqueda de administradores -->
 		<div class="container-fluid">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title"><i class="zmdi zmdi-search"></i> &nbsp; BUSCAR USUARIOS</h3>
+					<h3 class="panel-title"><i class="zmdi zmdi-search"></i> &nbsp; BUSCAR PRODUCTOS</h3>
 				</div>
 				<div class="panel-body">
 					<div class="table-responsive">
@@ -147,7 +142,7 @@
 									</td>
 									<td>
 										<form>
-											<button type="submit" class="btn btn-danger btn-raised btn-xs" title="si">
+											<button type="submit" class="btn btn-danger btn-raised btn-xs" title="ww">
 												<i class="zmdi zmdi-delete"></i>
 											</button>
 										</form>
@@ -171,7 +166,7 @@
 									</td>
 									<td>
 										<form>
-											<button type="submit" class="btn btn-danger btn-raised btn-xs" title="ss">
+											<button type="submit" class="btn btn-danger btn-raised btn-xs" title="po">
 												<i class="zmdi zmdi-delete"></i>
 											</button>
 										</form>
@@ -197,4 +192,5 @@
 		$.material.init();
 	</script>
 </body>
+
 </html>
