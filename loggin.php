@@ -1,3 +1,10 @@
+<?php
+
+include("conexion/conexion.php");
+session_start();
+
+//include("bloqueo.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +71,7 @@
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <input type="password" id="form2Example27" class="form-control form-control-lg" placeholder=" "  name="contrasena"/>
+                                            <input type="password" id="form2Example27" class="form-control form-control-lg" placeholder=" "  name="password"/>
                                             <label class="form-label" for="form2Example27">Password</label>
                                         </div>
 
