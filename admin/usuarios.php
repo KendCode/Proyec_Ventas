@@ -41,10 +41,10 @@
 				<li>
 
 				<li>
-					<a href="../proyecDos/admin/productos.php"><i class="zmdi zmdi-mall"></i> Productos</a>
+					<a href="../admin/productos.php"><i class="zmdi zmdi-mall"></i> Productos</a>
 				</li>
 				<li>
-					<a href="../proyecDos/admin/usuarios.php"><i class="zmdi zmdi-account"></i> Usuarios</a>
+					<a href="../admin/usuarios.php"><i class="zmdi zmdi-account"></i> Usuarios</a>
 				</li>
 
 				</li>
