@@ -1,17 +1,13 @@
 <?php
 include("../conexion/conexion.php");
 
-
-
-
-
 $usuario=$_POST['usuario'];
 $contrasena=$_POST['contrasena'];
 //echo "el usuario es:".$usuario;
 
 
 // primer paso guardar la consulta
-$consulta="SELECT * FROM estudiante WHERE ci='$usuario'";
+$consulta="SELECT * FROM usuario WHERE nombre='$usuario'";
 // segundo paso mostrar la consulta
 // mysqli_query (agregamos la variable de la conexion, la consulta que queremos trabajar)
 $resultado= mysqli_query($conexion,$consulta);
@@ -28,14 +24,40 @@ $resp= mysqli_fetch_assoc($resultado);
 
 
 
-if($usuario==$resp['ci'] && $contrasena==$resp['contrasena'])
+if($usuario==$resp['usuario'] && $contrasena==$resp['contrasena'])
 {
 //echo "usuario tipo estudiante";
 //creamos la sesion
-session_start();
+//session_start();
 //$_SESSION["va el nombre de la sesion"]=$usuario;
-$_SESSION['admin']=$usuario;
-$_SESSION['nombre']=$resp['nombre'];
+//$_SESSION['admin']=$usuario;
+//$_SESSION['nombre']=$resp['nombre'];
+// Utilizamos switch para manejar diferentes tipos de usuarios
+    switch ($resp['id_sesion']) {
+        case '1':
+            echo "Bienvenido, gerente";
+            echo '<script>window.location="../administracion.php"</script>';
+            break;
+        case '2':
+            echo "Bienvenido, administrador";
+            echo '<script>window.location="../administracion.php"</script>';
+            break;
+        case '3':
+            echo "Bienvenido, tecnico";
+            echo '<script>window.location="../administracion.php"</script>';
+            break;
+        case '4':
+            echo "Bienvenido, empleado";
+            break;
+        case '5':
+            echo "Bienvenido, cliente";
+            echo '<script>window.location="../administracion.php"</script>';
+            break;
+        default:
+            echo "Bienvenido, Usuario";
+            echo '<script>window.location="../administracion.php"</script>';
+            break;
+    }
 //$_SESSION['contrasena']=$contrasena;
 echo '<script>window.location="../administracion.php"</script>';
 }else{
@@ -44,7 +66,6 @@ echo '<script>window.location="../administracion.php"</script>';
    echo '<script>window.location="../loggin.php"</script>';
     
 }
-
 
 
 ?>
