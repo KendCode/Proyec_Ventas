@@ -41,7 +41,7 @@ session_start();
 			<!-- SideBar Menu -->
 			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
 				<li>
-					<a href="../proyecDos/admin/PanelAdmin.php">
+					<a href="administracion.php">
 						<i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i>Panel
 					</a>
 				</li>
