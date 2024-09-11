@@ -3,8 +3,9 @@ include("../conexion/conexion.php");
 
 $nombre=$_POST['nombre'];
 $contrasena=$_POST['contrasena'];
-echo "el usuario es:".$nombre;
-echo "<br>contrasena: ".$contrasena;
+
+//echo "el usuario es:".$nombre;
+//echo "<br>contrasena: ".$contrasena;
 
 // primer paso guardar la consulta
 $consulta="SELECT * FROM usuario WHERE password='$contrasena'";
@@ -17,47 +18,50 @@ $resultado= mysqli_query($conexion,$consulta);
 // mysqli_fetch_assoc(varibale dela conexion y la consulta);
 $resp= mysqli_fetch_assoc($resultado);
 
-//echo "el ci del usuario usuario es: ".$resp['ci'];
+//echo "<br>el password de  usuario es: ".$resp['password'];
+//echo "<br>el nombre usuario es: ".$resp['nombre'];
 
 //echo "<br>el nombre del usuario usuario es: ".$resp['nombre'];
 //echo "<br>el celular del usuario usuario es: ".$resp['celular'];
 
 //$usu = $resp['nombre'];
 
-if($nombre==$resp['nombre'] && $contrasena==$resp['contrasena'])
+if($nombre==$resp['nombre'] && $contrasena==$resp['password'])
 {
-    echo "usuario tipo estudiante";
+    //echo "usuario tipo estudiante";
 //creamos la sesion
-//session_start();
+session_start();
 //$_SESSION["va el nombre de la sesion"]=$usuario;
 //$_SESSION['admin']=$usuario;
 //$_SESSION['nombre']=$resp['nombre'];
 // Utilizamos switch para manejar diferentes tipos de usuarios
-    /*switch ($resp['id_sesion']) {
-        case '1':
+    switch ($resp['id_sesion']) {
+        case 1:
             echo "Bienvenido, gerente";
-            echo '<script>window.location="../administracion.php"</script>';
-            break;
-        case '2':
+            header('Location: ../administracion.php');
+            exit(); // Importante detener el script después de redireccionar
+        case 2:
             echo "Bienvenido, administrador";
-            echo '<script>window.location="../administracion.php"</script>';
-            break;
-        case '3':
+            header('Location: ../administracion.php');
+            exit();
+        case 3:
             echo "Bienvenido, tecnico";
-            echo '<script>window.location="../administracion.php"</script>';
-            break;
-        case '4':
+            header('Location: ../administracion.php');
+            exit();
+        case 4:
             echo "Bienvenido, empleado";
+            header('Location: ../ventas.php');
             break;
-        case '5':
+        case 5:
             echo "Bienvenido, cliente";
-            echo '<script>window.location="../ventas.php"</script>';
-            break;
+            header('Location: ../ventas.php');
+            exit();
         default:
             echo "Bienvenido, Usuario";
-            echo '<script>window.location="../ventas.php"</script>';
-            break;
-    }*/
+            header('Location: ../ventas.php');
+            exit();
+    }
+//echo "id sesion".$resp['id_sesion'];
 //$_SESSION['contrasena']=$contrasena;
 //echo '<script>window.location="../administracion.php"</script>';
 }else{
