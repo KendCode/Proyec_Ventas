@@ -28,14 +28,14 @@ $resp= mysqli_fetch_assoc($resultado);
 
 if($nombre==$resp['nombre'] && $contrasena==$resp['password'])
 {
-    //echo "usuario tipo estudiante";
+    echo "usuario correcto";
 //creamos la sesion
-session_start();
+//session_start();
 //$_SESSION["va el nombre de la sesion"]=$usuario;
 //$_SESSION['admin']=$usuario;
 //$_SESSION['nombre']=$resp['nombre'];
 // Utilizamos switch para manejar diferentes tipos de usuarios
-    switch ($resp['id_sesion']) {
+    /*switch ($resp['id_sesion']) {
         case 1:
             echo "Bienvenido, gerente";
             header('Location: ../administracion.php');
@@ -60,7 +60,7 @@ session_start();
             echo "Bienvenido, Usuario";
             header('Location: ../ventas.php');
             exit();
-    }
+    }*/
 //echo "id sesion".$resp['id_sesion'];
 //$_SESSION['contrasena']=$contrasena;
 //echo '<script>window.location="../administracion.php"</script>';

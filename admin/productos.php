@@ -1,3 +1,12 @@
+<?php
+
+include("../conexion/conexion.php");
+session_start();
+
+//include("bloqueo.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -85,22 +94,110 @@
 			</ul>
 		</div>
 		<div class="container-fluid"></div>
-		<form class="well">
+		<form class="well" action="" method="post">
 			<div class="row">
 				<div class="col-xs-12 col-md-8 col-md-offset-2">
 					<div class="form-group label-floating">
 						<span class="control-label">¿Qué estas buscando?</span>
-						<input class="form-control" type="text" name="search_admin_init" required="" title="Buscar">
+						<input class="form-control" type="number" name="id_producto" required="" title="Buscar">
 					</div>
 				</div>
 				<div class="col-xs-12">
 					<p class="text-center">
-						<button type="submit" class="btn btn-primary btn-raised btn-sm"><i class="zmdi zmdi-search"></i> &nbsp; Buscar</button>
+						<button type="submit" class="btn btn-primary btn-raised btn-sm" name="btn1" value="BUSCAR"><i class="zmdi zmdi-search"></i> &nbsp; Buscar</button>
 					</p>
 				</div>
 			</div>
 		</form>
 		</div>
+		<!-- <form action="" method="post">
+
+			<h3>Ingrese el id del producto que esta buscando</h3>
+
+			<input type="number" name="id_producto">
+			<input type="submit" name="btn1" value="BUSCAR">
+
+
+		</form> -->
+
+
+
+<?php
+$id_producto=$_POST['id_producto'];
+
+//primer paso
+$consulta="SELECT * FROM producto WHERE id_producto = '$id_producto'";
+//$consulta="SELECT * FROM ventas";
+//segunda paso 
+$respuesta=mysqli_query($conexion,$consulta);
+
+// tercer paso
+// 
+while($fila=mysqli_fetch_array($respuesta))
+{
+
+echo "el id del producto buscado es: ".$fila['id_producto'];
+echo "Descripcion del producto buscado es: ".$fila['descrip_producto'];
+?>
+<!-- 
+<table border="2">
+
+	<tr>
+		<th>CI</th>
+		<th>NOMBRE</th>
+		<th>APELLIDO PATERNO</th>
+		<th>APELLIDO MATERNO</th>
+		<th>GENERO</th>
+		<th>EDAD</th>
+		<th>CELULAR</th>
+		<th>CONTRASEÑA</th>
+		<th>ROL</th>
+		<th>ELIMINAR</th>
+		<th>MODIFICAR</th>
+
+	</tr>
+	<tr>
+		<td><?php //echo $fila['ci'];?></td>
+		<td><?php //echo $fila['nombre'];?></td>
+			<td><?php //echo $fila['ap_pat'];?></td>
+			<td><?php //echo $fila['ap_mat'];?></td>
+			<td><?php //echo $fila['genero'];?></td>
+			<td><?php //echo $fila['edad'];?></td>
+			<td><?php //echo $fila['celular'];?></td>
+			<td><?php //echo $fila['contrasena'];?></td>
+			<td><?php //echo $fila['id_sesion'];?></td>
+			<?php //$ci=$fila['ci']; 
+			//echo "el ci buscado es: ".$ci;
+			?>
+
+			<td><form action="control/abm.php" method="post">
+				<input type="hidden" name="ci" value="<?php //echo $ci;?>">
+			<input type="submit" name="btn1" value="ELIMINAR">	
+			</form></td>
+			<td>
+				<form action="modificar.php" method="post">
+				<input type="hidden" name="ci" value=" <?php // echo $ci;?>">
+			<input type="submit" name="btn2" value="MODIFICAR">	
+			</form>
+			</td>
+	</tr>
+
+
+</table>
+ -->
+
+
+
+
+<!-- 
+<p>REGISTRO DE NUEVO ESTUDIANTE</p>
+<form action="registro.php">
+	
+	<input type="submit" value="REGISTRAR NUEVO ESTUDIANTE">
+</form>
+
+ -->
+
 
 		<!-- Panel listado de busqueda de administradores -->
 		<div class="container-fluid">
@@ -114,22 +211,29 @@
 							<thead>
 								<tr>
 									<th class="text-center">#</th>
-									<th class="text-center">DNI</th>
-									<th class="text-center">NOMBRES</th>
-									<th class="text-center">APELLIDOS</th>
-									<th class="text-center">TELÉFONO</th>
-									<th class="text-center">A. CUENTA</th>
-									<th class="text-center">A. DATOS</th>
+									<th class="text-center">COLOR</th>
+									<th class="text-center">STOCK</th>
+									<th class="text-center">TALLA</th>
+									<th class="text-center">DESCRIPCION</th>
+									<th class="text-center">PRECIO UNI.</th>
+									<th class="text-center">MARCA</th>
+									<th class="text-center">AGREGAR</th>
+									<th class="text-center">MODIFICAR</th>
 									<th class="text-center">ELIMINAR</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>1</td>
-									<td>7890987651</td>
-									<td>Nombres</td>
-									<td>Apellidos</td>
-									<td>Telefono</td>
+									<td><?php echo $fila['id_producto'];?></td>
+									<td><?php echo $fila['color'];?></td>
+									<td><?php echo $fila['stock'];?></td>
+									<td><?php echo $fila['talla'];?></td>
+									<td><?php echo $fila['descrip_producto'];?></td>
+									<td><?php echo $fila['precio_unitario'];?></td>
+									<td><?php echo $fila['id_marca'];?></td>
+									<?php //$ci=$fila['ci']; 
+									//echo "el ci buscado es: ".$ci;
+									?>
 									<td>
 										<a href="#!" class="btn btn-success btn-raised btn-xs">
 											<i class="zmdi zmdi-refresh"></i>
@@ -148,30 +252,6 @@
 										</form>
 									</td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td>7890987651</td>
-									<td>Nombres</td>
-									<td>Apellidos</td>
-									<td>Telefono</td>
-									<td>
-										<a href="#!" class="btn btn-success btn-raised btn-xs">
-											<i class="zmdi zmdi-refresh"></i>
-										</a>
-									</td>
-									<td>
-										<a href="#!" class="btn btn-success btn-raised btn-xs">
-											<i class="zmdi zmdi-refresh"></i>
-										</a>
-									</td>
-									<td>
-										<form>
-											<button type="submit" class="btn btn-danger btn-raised btn-xs" title="po">
-												<i class="zmdi zmdi-delete"></i>
-											</button>
-										</form>
-									</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -179,7 +259,11 @@
 			</div>
 		</div>
 	</section>
+	<?php
+}
 
+
+?>
 	<!--====== Scripts -->
 	<script src="./js/jquery-3.1.1.min.js"></script>
 	<script src="./js/sweetalert2.min.js"></script>
