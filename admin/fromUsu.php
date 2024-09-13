@@ -11,8 +11,8 @@
 
 
 <form action="../control/abm.php" method="post" enctype="multipart/form-data">
-	<!-- CI:
-	<input type="text" name="ci" > -->
+	CI:
+	<input type="text" name="ci" >
 	<br>
 	NOMBRE:
 	<input type="text" name="nombre" >

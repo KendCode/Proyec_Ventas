@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-09-2024 a las 05:29:35
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 14-09-2024 a las 01:23:09
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -162,7 +162,7 @@ INSERT INTO `sesion` (`id_sesion`, `descrip_sesion`) VALUES
 --
 
 CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL,
+  `ci` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
@@ -176,7 +176,7 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `password`, `email`, `nro_celular`, `direccion`, `id_sesion`) VALUES
+INSERT INTO `usuario` (`ci`, `nombre`, `apellido`, `password`, `email`, `nro_celular`, `direccion`, `id_sesion`) VALUES
 (1, 'Juan', 'Perez', 'password1', 'juan.perez@example.com', 1234567890, 'Calle Falsa 123', 5),
 (2, 'Maria', 'Lopez', 'password2', 'maria.lopez@example.com', 2147483647, 'Avenida Siempre Viva 456', 5),
 (3, 'Carlos', 'Gomez', 'password3', 'carlos.gomez@example.com', 2147483647, 'Calle Central 789', 4),
@@ -229,7 +229,7 @@ ALTER TABLE `sesion`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`),
+  ADD PRIMARY KEY (`ci`),
   ADD KEY `fk_usuario_sesion` (`id_sesion`);
 
 --
@@ -240,7 +240,7 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  ADD CONSTRAINT `fk_pedido_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_pedido_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`ci`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `producto`

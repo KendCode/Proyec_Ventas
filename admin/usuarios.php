@@ -101,7 +101,7 @@ session_start();
 					<div class="col-xs-12 col-md-8 col-md-offset-2">
 						<div class="form-group label-floating">
 							<span class="control-label">¿A quién estas buscando?</span>
-							<input class="form-control" type="number" name="id_usuario" required="" title="Buscar">
+							<input class="form-control" type="number" name="ci" required="" title="Buscar">
 						</div>
 					</div>
 					<div class="col-xs-12">
@@ -114,10 +114,10 @@ session_start();
 		</div>
 
 <?php
-$id_usuario = $_POST['id_usuario'];
+$ci = $_POST['ci'];
 
 //primer paso
-$consulta="SELECT * FROM usuario WHERE id_usuario = '$id_usuario'";
+$consulta="SELECT * FROM usuario WHERE ci = '$ci'";
 //$consulta="SELECT * FROM usuario";
 //segunda paso 
 $respuesta=mysqli_query($conexion,$consulta);
@@ -141,7 +141,7 @@ while($fila=mysqli_fetch_array($respuesta))
 						<table class="table table-hover text-center">
 							<thead>
 							<tr>
-                                    <th scope="col" class="text-center">#</th>
+                                    <th scope="col" class="text-center">CI</th>
                                     <th scope="col" class="text-center">NOMBRE</th>
                                     <th scope="col" class="text-center">APELLIDO</th>
                                     <th scope="col" class="text-center">CONTRASEÑA</th>
@@ -156,7 +156,7 @@ while($fila=mysqli_fetch_array($respuesta))
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td scope="row"><?php echo $fila['id_usuario']; ?></td>
+                                    <td scope="row"><?php echo $fila['ci']; ?></td>
                                     <td scope="row"><?php echo $fila['nombre']; ?></td>
                                     <td scope="row"><?php echo $fila['apellido']; ?></td>
                                     <td scope="row"><?php echo $fila['password']; ?></td>

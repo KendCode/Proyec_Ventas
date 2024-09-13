@@ -68,7 +68,7 @@ while ($fila = mysqli_fetch_array($respuesta)) {
                         <table class="table table-hover text-center">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col" class="text-center">#</th>
+                                    <th scope="col" class="text-center">CI</th>
                                     <th scope="col" class="text-center">NOMBRE</th>
                                     <th scope="col" class="text-center">APELLIDO</th>
                                     <th scope="col" class="text-center">CONTRASEÑA</th>
@@ -83,7 +83,7 @@ while ($fila = mysqli_fetch_array($respuesta)) {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td scope="row"><?php echo $fila['id_usuario']; ?></td>
+                                    <td scope="row"><?php echo $fila['ci']; ?></td>
                                     <td scope="row"><?php echo $fila['nombre']; ?></td>
                                     <td scope="row"><?php echo $fila['apellido']; ?></td>
                                     <td scope="row"><?php echo $fila['password']; ?></td>

@@ -68,7 +68,7 @@ if(isset($_POST['agregar'])){
 	if($agregar=="REGISTRAR")
 	{
 
-// $ci=$_POST['ci'];
+$ci=$_POST['ci'];
 // echo "el nuevo ci es: ".$ci;
 $nombre=$_POST['nombre'];
 $apellido=$_POST['apellido'];
@@ -105,7 +105,7 @@ echo "la extension del archivo es: ".$extension;*/
 
         }*/
 // primer paso para el query
-$consulta="INSERT INTO usuario (nombre, apellido, password, email, nro_celular, direccion, id_sesion) VALUES ('$nombre', '$apellido', '$passsword', '$email' ,'$nro_celular', '$direccion', '$id_sesion')";
+$consulta="INSERT INTO usuario (ci, nombre, apellido, password, email, nro_celular, direccion, id_sesion) VALUES ('$ci','$nombre', '$apellido', '$passsword', '$email' ,'$nro_celular', '$direccion', '$id_sesion')";
 //segundo paso
 mysqli_query($conexion,$consulta);
 
