@@ -7,7 +7,7 @@ session_start();
 ?>
 <html lang="es">
 <head>
-    <title>Lista de productos</title>
+    <title>Lista de usuarios</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/listas.css">
@@ -29,12 +29,12 @@ session_start();
         }
     </style>
 </head>
-<h3 class="text-center">LISTA DE PRODUCTOS</h3>
+<h3 class="text-center">LISTA DE USUARIO</h3>
 <form action="" method="post">
     <div class="container-fluid">
 			<ul class="breadcrumb breadcrumb-tabs">
 				<li>
-                    <input class="btn btn-info" type="submit" name="btn1" value="LISTA PRODUCTOS">
+                    <input class="btn btn-info" type="submit" name="btn1" value="LISTA USUARIO">
 				</li>
 				<li>
 					<a href="productos.php" class="btn btn-success">
@@ -47,7 +47,7 @@ session_start();
 <?php
 
 //primer paso
-$consulta = "SELECT * FROM producto";
+$consulta = "SELECT * FROM usuario";
 //$consulta="SELECT * FROM ventas";
 //segunda paso 
 $respuesta = mysqli_query($conexion, $consulta);
@@ -69,12 +69,13 @@ while ($fila = mysqli_fetch_array($respuesta)) {
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col" class="text-center">#</th>
-                                    <th scope="col" class="text-center">COLOR</th>
-                                    <th scope="col" class="text-center">STOCK</th>
-                                    <th scope="col" class="text-center">TALLA</th>
-                                    <th scope="col" class="text-center">DESCRIPCION</th>
-                                    <th scope="col" class="text-center">PRECIO UNI.</th>
-                                    <th scope="col" class="text-center">MARCA</th>
+                                    <th scope="col" class="text-center">NOMBRE</th>
+                                    <th scope="col" class="text-center">APELLIDO</th>
+                                    <th scope="col" class="text-center">CONTRASEÑA</th>
+                                    <th scope="col" class="text-center">EMAIL</th>
+                                    <th scope="col" class="text-center">N°CELULAR</th>
+                                    <th scope="col" class="text-center">DIRECCION</th>
+                                    <th scope="col" class="text-center">ID SESION</th>
                                     <th scope="col" class="text-center">AGREGAR</th>
                                     <th scope="col" class="text-center">MODIFICAR</th>
                                     <th scope="col" class="text-center">ELIMINAR</th>
@@ -82,13 +83,14 @@ while ($fila = mysqli_fetch_array($respuesta)) {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td scope="row"><?php echo $fila['id_producto']; ?></td>
-                                    <td scope="row"><?php echo $fila['color']; ?></td>
-                                    <td scope="row"><?php echo $fila['stock']; ?></td>
-                                    <td scope="row"><?php echo $fila['talla']; ?></td>
-                                    <td scope="row"><?php echo $fila['descrip_producto']; ?></td>
-                                    <td scope="row"><?php echo $fila['precio_unitario']; ?></td>
-                                    <td scope="row"><?php echo $fila['id_marca']; ?></td>
+                                    <td scope="row"><?php echo $fila['id_usuario']; ?></td>
+                                    <td scope="row"><?php echo $fila['nombre']; ?></td>
+                                    <td scope="row"><?php echo $fila['apellido']; ?></td>
+                                    <td scope="row"><?php echo $fila['password']; ?></td>
+                                    <td scope="row"><?php echo $fila['email']; ?></td>
+                                    <td scope="row"><?php echo $fila['nro_celular']; ?></td>
+                                    <td scope="row"><?php echo $fila['direccion']; ?></td>
+                                    <td scope="row"><?php echo $fila['id_sesion']; ?></td>
                                     <?php //$ci=$fila['ci']; 
                                     //echo "el ci buscado es: ".$ci;
                                     ?>
@@ -140,10 +142,6 @@ while ($fila = mysqli_fetch_array($respuesta)) {
 
 <?php
 }
-
-
 ?>
-
 </body>
-
 </html>

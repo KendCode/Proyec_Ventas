@@ -2,11 +2,8 @@
 
 include("../conexion/conexion.php");
 session_start();
-
 //include("bloqueo.php");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 

@@ -1,3 +1,10 @@
+<?php
+
+include("../conexion/conexion.php");
+session_start();
+
+//include("bloqueo.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -76,12 +83,12 @@
 		<div class="container-fluid">
 			<ul class="breadcrumb breadcrumb-tabs">
 				<li>
-					<a href="admin.html" class="btn btn-info">
+					<a href="fromUsu.php" class="btn btn-info">
 						<i class="zmdi zmdi-plus"></i> &nbsp; NUEVO USUARIO
 					</a>
 				</li>
 				<li>
-					<a href="admin-list.html" class="btn btn-success">
+					<a href="listUsu.php" class="btn btn-success">
 						<i class="zmdi zmdi-format-list-bulleted"></i> &nbsp; LISTA DE USUARIOS
 					</a>
 				</li>
@@ -89,12 +96,12 @@
 		</div>
 
 		<div class="container-fluid">
-			<form class="well">
+			<form class="well" method="post">
 				<div class="row">
 					<div class="col-xs-12 col-md-8 col-md-offset-2">
 						<div class="form-group label-floating">
 							<span class="control-label">¿A quién estas buscando?</span>
-							<input class="form-control" type="text" name="search_admin_init" required="" title="Buscar">
+							<input class="form-control" type="number" name="id_usuario" required="" title="Buscar">
 						</div>
 					</div>
 					<div class="col-xs-12">
@@ -106,34 +113,70 @@
 			</form>
 		</div>
 
+<?php
+$id_usuario = $_POST['id_usuario'];
+
+//primer paso
+$consulta="SELECT * FROM usuario WHERE id_usuario = '$id_usuario'";
+//$consulta="SELECT * FROM usuario";
+//segunda paso 
+$respuesta=mysqli_query($conexion,$consulta);
+
+// tercer paso
+// 
+while($fila=mysqli_fetch_array($respuesta))
+{
+
+//echo "el id del producto buscado es: ".$fila['id_usuario'];
+//echo "Descripcion del producto buscado es: ".$fila['descrip_producto'];
+?>
 		<!-- Panel listado de busqueda de administradores -->
 		<div class="container-fluid">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title"><i class="zmdi zmdi-search"></i> &nbsp; BUSCAR USUARIOS</h3>
+					<h3 class="panel-title"><i class="zmdi zmdi-search"></i> &nbsp; BUSCAR PRODUCTOS</h3>
 				</div>
 				<div class="panel-body">
 					<div class="table-responsive">
 						<table class="table table-hover text-center">
 							<thead>
-								<tr>
-									<th class="text-center">#</th>
-									<th class="text-center">DNI</th>
-									<th class="text-center">NOMBRES</th>
-									<th class="text-center">APELLIDOS</th>
-									<th class="text-center">TELÉFONO</th>
-									<th class="text-center">A. CUENTA</th>
-									<th class="text-center">A. DATOS</th>
-									<th class="text-center">ELIMINAR</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>7890987651</td>
-									<td>Nombres</td>
-									<td>Apellidos</td>
-									<td>Telefono</td>
+							<tr>
+                                    <th scope="col" class="text-center">#</th>
+                                    <th scope="col" class="text-center">NOMBRE</th>
+                                    <th scope="col" class="text-center">APELLIDO</th>
+                                    <th scope="col" class="text-center">CONTRASEÑA</th>
+                                    <th scope="col" class="text-center">EMAIL</th>
+                                    <th scope="col" class="text-center">N°CELULAR</th>
+                                    <th scope="col" class="text-center">DIRECCION</th>
+                                    <th scope="col" class="text-center">ID SESION</th>
+                                    <th scope="col" class="text-center">AGREGAR</th>
+                                    <th scope="col" class="text-center">MODIFICAR</th>
+                                    <th scope="col" class="text-center">ELIMINAR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row"><?php echo $fila['id_usuario']; ?></td>
+                                    <td scope="row"><?php echo $fila['nombre']; ?></td>
+                                    <td scope="row"><?php echo $fila['apellido']; ?></td>
+                                    <td scope="row"><?php echo $fila['password']; ?></td>
+                                    <td scope="row"><?php echo $fila['email']; ?></td>
+                                    <td scope="row"><?php echo $fila['nro_celular']; ?></td>
+                                    <td scope="row"><?php echo $fila['direccion']; ?></td>
+                                    <td scope="row"><?php echo $fila['id_sesion']; ?></td>
+									<?php //$ci=$fila['ci']; 
+									//echo "el ci buscado es: ".$ci;
+									?>
+									<!-- <td><form action="control/abm.php" method="post">
+										<input type="hidden" name="ci" value="<?php //echo $ci;?>">
+										<input type="submit" name="btn1" value="ELIMINAR">	
+										</form></td>
+										<td>
+											<form action="modificar.php" method="post">
+											<input type="hidden" name="ci" value=" <?php // echo $ci;?>">
+										<input type="submit" name="btn2" value="MODIFICAR">	
+										</form>
+										</td> -->
 									<td>
 										<a href="#!" class="btn btn-success btn-raised btn-xs">
 											<i class="zmdi zmdi-refresh"></i>
@@ -146,35 +189,19 @@
 									</td>
 									<td>
 										<form>
-											<button type="submit" class="btn btn-danger btn-raised btn-xs" title="si">
+											<button type="submit" class="btn btn-danger btn-raised btn-xs" title="ww">
 												<i class="zmdi zmdi-delete"></i>
 											</button>
 										</form>
 									</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>7890987651</td>
-									<td>Nombres</td>
-									<td>Apellidos</td>
-									<td>Telefono</td>
-									<td>
-										<a href="#!" class="btn btn-success btn-raised btn-xs">
-											<i class="zmdi zmdi-refresh"></i>
-										</a>
-									</td>
-									<td>
-										<a href="#!" class="btn btn-success btn-raised btn-xs">
-											<i class="zmdi zmdi-refresh"></i>
-										</a>
-									</td>
-									<td>
-										<form>
-											<button type="submit" class="btn btn-danger btn-raised btn-xs" title="ss">
-												<i class="zmdi zmdi-delete"></i>
-											</button>
+									<!-- 
+										<p>REGISTRO DE NUEVO ESTUDIANTE</p>
+										<form action="registro.php">
+
+											<input type="submit" value="REGISTRAR NUEVO ESTUDIANTE">
 										</form>
-									</td>
+
+										 -->
 								</tr>
 							</tbody>
 						</table>
@@ -183,7 +210,9 @@
 			</div>
 		</div>
 	</section>
-
+	<?php
+}
+?>
 	<!--====== Scripts -->
 	<script src="./js/jquery-3.1.1.min.js"></script>
 	<script src="./js/sweetalert2.min.js"></script>
