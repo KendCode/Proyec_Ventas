@@ -82,13 +82,13 @@ session_start();
 		<div class="container-fluid">
 			<ul class="breadcrumb breadcrumb-tabs">
 				<li>
-					<a href="admin.html" class="btn btn-info">
-						<i class="zmdi zmdi-plus"></i> &nbsp; NUEVO PRODUCTO
+					<a href="fromPro.php" class="btn btn-info">
+						<i class="zmdi zmdi-plus" type="submit" value=""></i> &nbsp; NUEVO PRODUCTO
 					</a>
 				</li>
 				<li>
-					<a href="admin-list.html" class="btn btn-success">
-						<i class="zmdi zmdi-format-list-bulleted"></i> &nbsp; LISTA DE PRODUCTOS
+					<a href="listPro.php" class="btn btn-success">
+						<i class="zmdi zmdi-format-list-bulleted" type="sumit" value=""></i> &nbsp; LISTA DE PRODUCTOS
 					</a>
 				</li>
 			</ul>
@@ -127,7 +127,7 @@ $id_producto=$_POST['id_producto'];
 
 //primer paso
 $consulta="SELECT * FROM producto WHERE id_producto = '$id_producto'";
-//$consulta="SELECT * FROM ventas";
+//$consulta="SELECT * FROM producto";
 //segunda paso 
 $respuesta=mysqli_query($conexion,$consulta);
 
