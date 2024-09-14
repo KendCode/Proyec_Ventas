@@ -28,48 +28,59 @@ $resp= mysqli_fetch_assoc($resultado);
 
 if($nombre==$resp['nombre'] && $contrasena==$resp['password'])
 {
-    echo "usuario correcto";
+   
 //creamos la sesion
 //session_start();
 //$_SESSION["va el nombre de la sesion"]=$usuario;
 //$_SESSION['admin']=$usuario;
 //$_SESSION['nombre']=$resp['nombre'];
 // Utilizamos switch para manejar diferentes tipos de usuarios
-    /*switch ($resp['id_sesion']) {
-        case 1:
-            echo "Bienvenido, gerente";
-            header('Location: ../administracion.php');
-            exit(); // Importante detener el script después de redireccionar
-        case 2:
-            echo "Bienvenido, administrador";
-            header('Location: ../administracion.php');
-            exit();
-        case 3:
-            echo "Bienvenido, tecnico";
-            header('Location: ../administracion.php');
-            exit();
-        case 4:
-            echo "Bienvenido, empleado";
-            header('Location: ../ventas.php');
-            break;
-        case 5:
-            echo "Bienvenido, cliente";
-            header('Location: ../ventas.php');
-            exit();
-        default:
-            echo "Bienvenido, Usuario";
-            header('Location: ../ventas.php');
-            exit();
-    }*/
+
+ if($resp['id_sesion']==1){
+    session_start();
+     $_SESSION['admin']= $nombre;
+    echo '<script>window.location="../administracion.php"</script>';
+    
+   
+ }
+ elseif($resp['id_sesion']==2){
+    session_start();
+    $_SESSION['admin']= $nombre;
+    echo '<script>window.location="../administracion.php"</script>';
+    
+    //echo "Usuario tipo Administrativo";
+ }  
+ elseif($resp['id_sesion']==3){
+    session_start();
+     $_SESSION['admin']= $nombre;
+    echo '<script>window.location="../administracion.php"</script>';
+ }
+ elseif($resp['id_sesion']==4){
+    session_start();
+    $_SESSION['cli']= $nombre;
+    echo '<script>window.location="../ventas.php"</script>';
+ }
+ elseif($resp['id_sesion']==5){
+     session_start();
+     $_SESSION['cli']= $nombre;
+     echo '<script>window.location="../ventas.php"</script>';
+ }
+//creamos la sesion
+//session_start();
+//$_SESSION["va el nombre de la sesion"]=$usuario;
+//$_SESSION['usuario']=$usuario;
+//$_SESSION['contrasena']=$contrasena;
+//echo '<script>window.location="../ventas.php"</script>';
+}else{
+	echo "usuario incocorrecto";
+   // echo "<script>alert('usuario o contraseña incorrecta')</script>";
+    //echo '<script>window.location="../loggin.html"</script>';
+    
+}
 //echo "id sesion".$resp['id_sesion'];
 //$_SESSION['contrasena']=$contrasena;
 //echo '<script>window.location="../administracion.php"</script>';
-}else{
-	echo "usuario incocorrecto";
-    //echo "<script>alert('usuario o contraseña incorrecta')</script>";
-   //echo '<script>window.location="../loggin.php"</script>';
-    
-}
+
 
 
 ?>

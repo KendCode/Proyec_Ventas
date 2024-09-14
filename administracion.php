@@ -1,7 +1,7 @@
 <?php
 
 include("conexion/conexion.php");
-session_start();
+
 
 //include("bloqueo.php");
 ?>
@@ -28,7 +28,13 @@ session_start();
 			<div class="full-box dashboard-sideBar-UserInfo">
 				<figure class="full-box">
 					<img src="../proyecDos/admin/assets/avatars/AdminMaleAvatar.png" alt="UserIcon">
-					<figcaption class="text-center text-titles">User Name</figcaption>
+					<figcaption class="text-center text-titles">
+						<?php
+                			include("conexion/conexion.php");
+                			session_start();
+                			echo "".$_SESSION['admin'];
+                		?>
+				</figcaption>
 				</figure>
 				<ul class="full-box list-unstyled text-center">
 					<li>

@@ -1,3 +1,9 @@
+<?php
+
+include("conexion/conexion.php");
+
+//include("bloqueo.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,16 +52,10 @@
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <?php
+                include("conexion/conexion.php");
                 session_start();
-                // Mostrar mensaje de bienvenida si hay un usuario en sesión
-                if (isset($_SESSION['usuario'])) {
-                    echo '<h1><strong>Bienvenido ' . htmlspecialchars($_SESSION['usuario']) . '</strong></h1>';
-                } else {
-                    echo '<h1><strong>Bienvenido Invitado</strong></h1>';
-                }
-
-                include(__DIR__ . '../bloqueo.php');
-                //include("/../bloqueo.php");
+                echo "".$_SESSION['cli'];
+                 
                 ?>
                 <h1 class="display-4 fw-bolder"></h1>
                 <p class="lead fw-normal text-white-50 mb-0">Elige los productos que desees</p>
