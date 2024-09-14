@@ -17,7 +17,7 @@ $ci=$_POST['ci'];
 
 
 //primer paso
-$consulta="SELECT * FROM estudiante WHERE ci = '$ci'";
+$consulta="SELECT * FROM usuario WHERE ci = '$ci'";
 //$consulta="SELECT * FROM estudiante";
 //segunda paso 
 $respuesta=mysqli_query($conexion,$consulta);
@@ -27,8 +27,8 @@ $respuesta=mysqli_query($conexion,$consulta);
 while($fila=mysqli_fetch_array($respuesta))
 {
 
-//echo "el ci buscado es: ".$fila['ci'];
-//echo "el nombre del buscado es: ".$fila['nombre'];
+echo "el ci buscado es: ".$fila['ci'];
+echo "el nombre del buscado es: ".$fila['nombre'];
 ?>
 
 
@@ -42,34 +42,34 @@ while($fila=mysqli_fetch_array($respuesta))
 	<input type="text" name="nombre" value="<?php echo $fila['nombre'];?>">
 
 	<br>
-APELLIDO PATERNO:
-<input type="text" name="ap_pat" value="<?php echo $fila['ap_pat'];?>">
+APELLIDO:
+<input type="text" name="ap_pat" value="<?php echo $fila['apellido'];?>">
 
 
 
 	<br>
-APELLIDO MATERNO:
-<input type="text" name="ap_mat" value="<?php echo $fila['ap_mat'];?>">
+PASSWORD:
+<input type="text" name="ap_mat" value="<?php echo $fila['password'];?>">
 
 
 	<br>
-EDAD:
-<input type="text" name="edad" value="<?php echo $fila['edad'];?>">
+EMAIL:
+<input type="text" name="edad" value="<?php echo $fila['email'];?>">
 
 
 	<br>
-GENERO:
-<input type="text" name="genero" value="<?php echo $fila['genero'];?>">
+NRO CELULAR:
+<input type="text" name="genero" value="<?php echo $fila['nro_celular'];?>">
 
 
 	<br>
-CELULAR:
-<input type="text" name="celular" value="<?php echo $fila['celular'];?>">
+DIRECCION:
+<input type="text" name="celular" value="<?php echo $fila['direccion'];?>">
 
 
 	<br>
-CONTRASEÑA:
-<input type="text" name="contrasena" value="<?php echo $fila['contrasena'];?>">
+SESION
+<input type="text" name="contrasena" value="<?php echo $fila['id_sesion'];?>">
 
 
 <input type="submit" name="btn3" value="MODIFICAR">

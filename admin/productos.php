@@ -1,7 +1,7 @@
 <?php
 
 include("../conexion/conexion.php");
-session_start();
+
 //include("bloqueo.php");
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,11 @@ session_start();
 			<div class="full-box dashboard-sideBar-UserInfo">
 				<figure class="full-box">
 					<img src="./assets/avatars/AdminMaleAvatar.png" alt="UserIcon">
-					<figcaption class="text-center text-titles">User Name</figcaption>
+					<figcaption class="text-center text-titles"><?php
+                			include("../conexion/conexion.php");
+                			session_start();
+                			echo "".$_SESSION['admin'];
+                		?></figcaption>
 				</figure>
 				<ul class="full-box list-unstyled text-center">
 					<li>
@@ -154,7 +158,6 @@ while($fila=mysqli_fetch_array($respuesta))
 									<th class="text-center">DESCRIPCION</th>
 									<th class="text-center">PRECIO UNI.</th>
 									<th class="text-center">MARCA</th>
-									<th class="text-center">AGREGAR</th>
 									<th class="text-center">MODIFICAR</th>
 									<th class="text-center">ELIMINAR</th>
 								</tr>
@@ -171,31 +174,15 @@ while($fila=mysqli_fetch_array($respuesta))
 									<?php //$ci=$fila['ci']; 
 									//echo "el ci buscado es: ".$ci;
 									?>
-									<!-- <td><form action="control/abm.php" method="post">
-										<input type="hidden" name="ci" value="<?php //echo $ci;?>">
-										<input type="submit" name="btn1" value="ELIMINAR">	
-										</form></td>
-										<td>
-											<form action="modificar.php" method="post">
-											<input type="hidden" name="ci" value=" <?php // echo $ci;?>">
-										<input type="submit" name="btn2" value="MODIFICAR">	
+									<td>
+										<form action="../modificar.php" method="post">
+											<input type="hidden" name="ci" value="" >
+											<input type="submit" name="btn2" value="MODIFICAR"  class="btn btn-success btn-raised btn-xs">	
 										</form>
-										</td> -->
-									<td>
-										<a href="#!" class="btn btn-success btn-raised btn-xs">
-											<i class="zmdi zmdi-refresh"></i>
-										</a>
-									</td>
-									<td>
-										<a href="#!" class="btn btn-success btn-raised btn-xs">
-											<i class="zmdi zmdi-refresh"></i>
-										</a>
-									</td>
-									<td>
-										<form>
-											<button type="submit" class="btn btn-danger btn-raised btn-xs" title="ww">
-												<i class="zmdi zmdi-delete"></i>
-											</button>
+									</td> 
+									<td><form action="control/abm.php" method="post">
+										<input type="hidden" name="ci" value="<?php //echo $ci;?>">
+										<input type="submit" name="btn1" value="ELIMINAR" class="btn btn-danger btn-raised btn-xs">	
 										</form>
 									</td>
 									<!-- 
