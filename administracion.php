@@ -32,7 +32,7 @@ include("conexion/conexion.php");
 						<?php
                 			include("conexion/conexion.php");
                 			session_start();
-                			echo "".$_SESSION['admin'];
+                			echo "<h3>".$_SESSION['admin']."</h3>";
                 		?>
 				</figcaption>
 				</figure>

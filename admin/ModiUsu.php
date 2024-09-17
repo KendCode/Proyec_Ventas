@@ -11,13 +11,11 @@
 </head>
 <body>
 	
-<h3>MODIFICACIÓN</h3>
+<h3>MODIFICACIÓN USUARIO</h3>
 
 <?php 
 
 $ci=$_POST['ci'];
-echo "dada ".$ci;
-
 //primer paso
 $consulta="SELECT * FROM usuario WHERE ci = '$ci'";
 //$consulta="SELECT * FROM estudiante";
