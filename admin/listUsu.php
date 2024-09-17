@@ -76,9 +76,8 @@ while ($fila = mysqli_fetch_array($respuesta)) {
                                     <th scope="col" class="text-center">N°CELULAR</th>
                                     <th scope="col" class="text-center">DIRECCION</th>
                                     <th scope="col" class="text-center">ID SESION</th>
-                                    <th scope="col" class="text-center">AGREGAR</th>
-                                    <th scope="col" class="text-center">MODIFICAR</th>
-                                    <th scope="col" class="text-center">ELIMINAR</th>
+                                    <!--<th scope="col" class="text-center">MODIFICAR</th>
+                                    <th scope="col" class="text-center">ELIMINAR</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -94,35 +93,17 @@ while ($fila = mysqli_fetch_array($respuesta)) {
                                     <?php //$ci=$fila['ci']; 
                                     //echo "el ci buscado es: ".$ci;
                                     ?>
-                                    <!-- <td><form action="control/abm.php" method="post">
-										<input type="hidden" name="ci" value="<?php //echo $ci;
-                                                                                ?>">
-										<input type="submit" name="btn1" value="ELIMINAR">	
-										</form></td>
-										<td>
-											<form action="modificar.php" method="post">
-											<input type="hidden" name="ci" value=" <?php // echo $ci;
-                                                                                    ?>">
-										<input type="submit" name="btn2" value="MODIFICAR">	
+                                        <!-- <td>
+											<form action="ModiUsu.php" method="post">
+												<input type="hidden" name="ci" value=" <?php echo $ci; ?> ">
+												<input type="submit" name="btn3" value="MODIFICAR"  class="btn btn-success btn-raised btn-xs">	
+											</form>
+											</td> 
+									<td><form action="../control/abm.php" method="post">
+										<input type="hidden" name="ci" value="<?php echo $ci;?>">
+										<input type="submit" name="btn1" value="ELIMINAR" class="btn btn-danger btn-raised btn-xs">	
 										</form>
-										</td> -->
-                                    <td>
-                                        <a href="#!" class="btn btn-success btn-raised btn-xs">
-                                            <i class="zmdi zmdi-refresh"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#!" class="btn btn-success btn-raised btn-xs">
-                                            <i class="zmdi zmdi-refresh"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <form>
-                                            <button type="submit" class="btn btn-danger btn-raised btn-xs" title="ww">
-                                                <i class="zmdi zmdi-delete"></i>
-                                            </button>
-                                        </form>
-                                    </td>
+									</td> -->
                                     <!-- 
 										<p>REGISTRO DE NUEVO ESTUDIANTE</p>
 										<form action="registro.php">

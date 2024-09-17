@@ -54,10 +54,8 @@ include("conexion/conexion.php");
                 <?php
                 include("conexion/conexion.php");
                 session_start();
-                echo "".$_SESSION['cli'];
-                 
+                echo "<h1 class='display-4 fw-bolder' >".$_SESSION['cli']."</h1>";
                 ?>
-                <h1 class="display-4 fw-bolder"></h1>
                 <p class="lead fw-normal text-white-50 mb-0">Elige los productos que desees</p>
             </div>
         </div>

@@ -175,14 +175,14 @@ while($fila=mysqli_fetch_array($respuesta))
 									//echo "el ci buscado es: ".$ci;
 									?>
 									<td>
-										<form action="control/abm.php" method="post">
-											<input type="hidden" name="ci" value="MODIFICAR" >
-											<input type="submit" name="btn3" value="MODIFICAR"  class="btn btn-success btn-raised btn-xs">	
+										<form action="ModiPro.php" method="post">
+											<input type="hidden" name="id_producto" value="<?php echo $id_producto;?> ">
+											<input type="submit" name="btn10" value="MODIFICAR"  class="btn btn-success btn-raised btn-xs">	
 										</form>
 									</td> 
-									<td><form action="control/abm.php" method="post">
-										<input type="hidden" name="ci" value="<?php //echo $ci;?>">
-										<input type="submit" name="btn1" value="ELIMINAR" class="btn btn-danger btn-raised btn-xs">	
+									<td><form action="../control/abm.php" method="post">
+										<input type="hidden" name="id_producto" value="<?php echo $id_producto;?>">
+										<input type="submit" name="btn11" value="ELIMINAR" class="btn btn-danger btn-raised btn-xs">	
 										</form>
 									</td>
 									<!-- 
