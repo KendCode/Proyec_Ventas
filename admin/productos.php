@@ -175,9 +175,9 @@ while($fila=mysqli_fetch_array($respuesta))
 									//echo "el ci buscado es: ".$ci;
 									?>
 									<td>
-										<form action="../modificar.php" method="post">
-											<input type="hidden" name="ci" value="" >
-											<input type="submit" name="btn2" value="MODIFICAR"  class="btn btn-success btn-raised btn-xs">	
+										<form action="control/abm.php" method="post">
+											<input type="hidden" name="ci" value="MODIFICAR" >
+											<input type="submit" name="btn3" value="MODIFICAR"  class="btn btn-success btn-raised btn-xs">	
 										</form>
 									</td> 
 									<td><form action="control/abm.php" method="post">

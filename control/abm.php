@@ -16,7 +16,7 @@ $ci=$_POST['ci'];
 
 //DELETE FROM estudiante WHERE estudiante.ci = '$ci'
 // primer
-$consulta= "DELETE FROM estudiante WHERE estudiante.ci = '$ci'";
+$consulta= "DELETE FROM usuario WHERE usuario.ci = '$ci'";
 //segundo paso
 mysqli_query($conexion,$consulta);
 echo "<script>alert('usuario Eliminado de manera correcta')</script>";
@@ -25,7 +25,7 @@ echo "<script>alert('usuario Eliminado de manera correcta')</script>";
 	}
 }
 ?>
-
+<!-- MODIFICAR -->
 <?php
 
 if(isset($_POST['btn3'])){
@@ -37,22 +37,22 @@ if(isset($_POST['btn3'])){
 $ci=$_POST['ci'];
 $nombre=$_POST['nombre'];
 //
-//echo "el ci es: ".$ci."y el nombre es: ".$nombre;
-$ap_pat=$_POST['ap_pat'];
-$ap_mat=$_POST['ap_mat'];
-$edad=$_POST['edad'];
-$genero=$_POST['genero'];
-$celular=$_POST['celular'];
-$contrasena=$_POST['contrasena'];
+echo "el ci es: ".$ci."y el nombre es: ".$nombre;
+$apellido=$_POST['apellido'];
+$password=$_POST['password'];
+$email=$_POST['email'];
+$nro_celular=$_POST['nro_celular'];
+$direccion=$_POST['direccion'];
+$id_sesion=$_POST['id_sesion'];
 
 //primer paso
-$consulta="UPDATE estudiante SET nombre = '$nombre', ap_pat = '$ap_pat', ap_mat='$ap_mat', genero = '$genero', celular='$celular', edad ='$edad', contrasena='$contrasena' WHERE estudiante.ci = '$ci'";
+$consulta="UPDATE usuario SET nombre = '$nombre', apellido = '$apellido', password='$password', email = '$email', nro_celular='$nro_celular', direccion ='$direccion' WHERE usuario.ci = '$ci'";
 
 //segundo paso
 mysqli_query($conexion,$consulta);
 
-echo "<script>alert('usuario modificado de manera correcta')</script>";
-   echo '<script>window.location="../administracion.php"</script>';
+//echo "<script>alert('usuario modificado de manera correcta')</script>";
+   //echo '<script>window.location="../administracion.php"</script>';
 
 	}
 }
