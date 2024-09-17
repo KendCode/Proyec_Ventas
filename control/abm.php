@@ -51,8 +51,8 @@ $consulta="UPDATE usuario SET nombre = '$nombre', apellido = '$apellido', passwo
 //segundo paso
 mysqli_query($conexion,$consulta);
 
-//echo "<script>alert('usuario modificado de manera correcta')</script>";
-   //echo '<script>window.location="../administracion.php"</script>';
+echo "<script>alert('usuario modificado de manera correcta')</script>";
+   echo '<script>window.location="../administracion.php"</script>';
 
 	}
 }

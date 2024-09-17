@@ -90,7 +90,27 @@ include("conexion/conexion.php");
 					<i class="zmdi zmdi-account"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">7</p>
+						<?php
+						// Primer paso: definir la consulta
+						$consulta = "SELECT COUNT(*) AS total_usuarios FROM usuario;";
+
+						// Segundo paso: ejecutar la consulta
+						$respuesta = mysqli_query($conexion, $consulta);
+
+						// Tercer paso: procesar el resultado
+						if ($respuesta) {
+						    $fila = mysqli_fetch_array($respuesta);
+						    $_SESSION['suma'] = $fila['total_usuarios'];
+						} else {
+						    $_SESSION['suma'] = 0; // En caso de error en la consulta
+						}
+
+						
+						?>
+						<!-- Mostrar el número total de usuarios en HTML -->
+						<p class="full-box">
+						    <?php echo $_SESSION['suma']; ?>
+						</p>
 					<small>Registro</small>
 				</div>
 			</article>
@@ -102,7 +122,28 @@ include("conexion/conexion.php");
 					<i class="zmdi zmdi-mall"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">10</p>
+					<?php
+							// Primer paso: definir la consulta
+							$consul = "SELECT COUNT(*) AS total_producto FROM producto;";
+	
+							// Segundo paso: ejecutar la consulta
+							$resp = mysqli_query($conexion, $consul);
+	
+							// Tercer paso: procesar el resultado
+							if ($resp) {
+								$fila = mysqli_fetch_array($resp);
+								$_SESSION['pro'] = $fila['total_producto'];
+							} else {
+								$_SESSION['pro'] = 0; // En caso de error en la consulta
+							}
+	
+							// Cerrar la conexión si es necesario
+							mysqli_close($conexion);
+							?>
+							<!-- Mostrar el número total de usuarios en HTML -->
+					<p class="full-box">
+						<?php echo $_SESSION['pro']; ?>
+					</p>
 					<small>Registro</small>
 				</div>
 			</article>
