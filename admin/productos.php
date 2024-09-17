@@ -185,14 +185,6 @@ while($fila=mysqli_fetch_array($respuesta))
 										<input type="submit" name="btn11" value="ELIMINAR" class="btn btn-danger btn-raised btn-xs">	
 										</form>
 									</td>
-									<!-- 
-										<p>REGISTRO DE NUEVO ESTUDIANTE</p>
-										<form action="registro.php">
-
-											<input type="submit" value="REGISTRAR NUEVO ESTUDIANTE">
-										</form>
-
-										 -->
 								</tr>
 							</tbody>
 						</table>
@@ -201,10 +193,9 @@ while($fila=mysqli_fetch_array($respuesta))
 			</div>
 		</div>
 	</section>
-	<?php
+<?php
 }
-
-
+	
 ?>
 	<!--====== Scripts -->
 	<script src="./js/jquery-3.1.1.min.js"></script>

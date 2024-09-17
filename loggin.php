@@ -81,6 +81,8 @@ session_start();
                                             style="color: #393f81;">Register here</a></p> -->
                                         <a href="#!" class="small text-muted">Terms of use.</a>
                                         <a href="#!" class="small text-muted">Privacy policy</a>
+                                        <br>
+                                        <a href="admin/fromUsu.php" class="">REGISTRARSE</a>
                                     </form>
 
                                 </div>
