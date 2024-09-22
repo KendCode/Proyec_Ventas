@@ -1,7 +1,7 @@
 <?php
 
 include("conexion/conexion.php");
-
+//include("destroy.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +25,7 @@ include("conexion/conexion.php");
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            <a class="navbar-brand" href="principal.php"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -50,9 +50,12 @@ include("conexion/conexion.php");
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <?php
-                include("conexion/conexion.php");
-                session_start();
-                echo "<h1 class='display-4 fw-bolder' >".$_SESSION['cli']."</h1>";
+               session_start(); // Asegúrate de tener esto al inicio
+               if (isset($_SESSION['cli'])) {
+                   echo "<h1 class='display-4 fw-bolder'>".$_SESSION['cli']."</h1>";
+               } else {
+                   echo "<h1 class='display-4 fw-bolder'>No hay cliente registrado".$_SESSION['cli']."</h1>";
+               }
                 ?>
                 <p class="lead fw-normal text-white-50 mb-0">Elige los productos que desees</p>
             </div>

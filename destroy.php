@@ -3,6 +3,6 @@ session_start();
 
 session_destroy();
 
-header("location: /proyecDos/loggin.php");
-
+header("location: principal.php");
+exit();
 ?>

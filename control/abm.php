@@ -2,6 +2,7 @@
 <?php
 
 include ("../conexion/conexion.php");
+session_start();
 ?>
 <?php
 if(isset($_POST['btn1'])){
@@ -116,7 +117,7 @@ echo "<script>alert('usuario modificado de manera correcta')</script>";
 
 ?>
 
-<!-- REGSITRO -->
+<!-- REGSITRO USUARIO-->
 
 <?php
 
@@ -166,11 +167,84 @@ echo "la extension del archivo es: ".$extension;*/
 $consulta="INSERT INTO usuario (ci, nombre, apellido, password, email, nro_celular, direccion, id_sesion) VALUES ('$ci','$nombre', '$apellido', '$passsword', '$email' ,'$nro_celular', '$direccion', '$id_sesion')";
 //segundo paso
 mysqli_query($conexion,$consulta);
+$id_sesion = $_POST['id_sesion'];
+$nombre = $_POST['nombre']; // Asegúrate de que $nombre esté definido
+
+if ($id_sesion == 1 || $id_sesion == 2 || $id_sesion == 3) {
+    $_SESSION['admin'] = $nombre;
+    echo '<script>window.location="../administracion.php"</script>';
+} elseif ($id_sesion == 4 || $id_sesion == 5) {
+    if (!empty($nombre)) {
+        $_SESSION['cli'] = $nombre; // Se guarda el nombre del cliente en la sesión
+        echo '<script>window.location="../ventas.php"</script>';
+    } else {
+        echo "El nombre no está definido.";
+    }
+} else {
+    echo "ID de sesión no válido.";
+}
+
+
+
+}
+}
+?>
+// REGISTRO DE PRODUCTO
+
+<?php
+
+/*if(isset($_POST['agregar'])){
+
+	$agregar=$_POST['agregar'];
+	if($agregar=="REGISTRAR")
+	{
+
+$ci=$_POST['ci'];
+// echo "el nuevo ci es: ".$ci;
+$nombre=$_POST['nombre'];
+$apellido=$_POST['apellido'];
+$passsword=$_POST['password'];
+$email=$_POST['email'];
+$nro_celular=$_POST['nro_celular'];
+$direccion=$_POST['direccion'];
+$id_sesion=$_POST['id_sesion'];
+//$contrasena=$_POST['contrasena'];
+
+// codigo para guardar imagen
+
+
+        /*$nombre_foto   = $_FILES['archivo']['name'];
+        $guardado = $_FILES['archivo']['tmp_name'];
+        $tipo     = $_FILES['archivo']['type'];
+
+
+
+        $extension = pathinfo($nombre_foto, PATHINFO_EXTENSION);*/
+/*echo "el nombre del archivo es: ".$nombre;
+echo "el guardado del archivo es: ".$guardado;
+echo "el tipo del archivo es: ".$tipo;
+echo "la extension del archivo es: ".$extension;*/
+
+        /*$nombre_archivo = $ci . '.' . $extension;
+
+        //if (move_uploaded_file($guardado, '/rudeal/sin_firmas/' . $nombre_archivo)) {
+        if (move_uploaded_file($guardado, 'C:/xampp1/htdocs/2-2024/images/fotos/' . $nombre_archivo)) {
+
+            echo "archivo guardado con exito";
+        } else {
+            echo "archivo no guardado";
+
+        }*/
+// primer paso para el query
+/*$consulta="INSERT INTO usuario (ci, nombre, apellido, password, email, nro_celular, direccion, id_sesion) VALUES ('$ci','$nombre', '$apellido', '$passsword', '$email' ,'$nro_celular', '$direccion', '$id_sesion')";
+//segundo paso
+mysqli_query($conexion,$consulta);
 
 echo "<script>alert('usuario registrado de manera correcta')</script>";
    echo '<script>window.location="../administracion.php"</script>';
+*/
 
-
-}
-}
+//}
+//}
+//
 ?>
