@@ -2,7 +2,7 @@
 <?php
 
 include ("../conexion/conexion.php");
-session_start();
+
 ?>
 <?php
 if(isset($_POST['btn1'])){
@@ -189,7 +189,7 @@ if ($id_sesion == 1 || $id_sesion == 2 || $id_sesion == 3) {
 }
 }
 ?>
-// REGISTRO DE PRODUCTO
+ <!-- REGISTRO DE PRODUCTO -->
 
 <?php
 
@@ -204,7 +204,7 @@ $id_producto=$_POST['id_producto'];
 $color=$_POST['color'];
 $stock=$_POST['stock'];
 $talla=$_POST['talla'];
-$descrip_producto=$_POST['decrip_producto'];
+$descrip_producto=$_POST['descrip_producto'];
 $precio_unitario=$_POST['precio_unitario'];
 $id_marca=$_POST['id_marca'];
 //$contrasena=$_POST['contrasena'];

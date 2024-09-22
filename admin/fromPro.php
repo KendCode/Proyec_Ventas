@@ -167,7 +167,7 @@
 <body>
     <div class="container">
         <h3>FORMULARIO DE REGISTRO DE PRODUCTO</h3>
-        <form action="control/abm.php" method="post" enctype="multipart/form-data">
+        <form action="../control/abm.php" method="post" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="form-group">
                     <label class="form-label" for="id_producto">Código de Producto:</label>
@@ -195,7 +195,7 @@
                 </div>
                 <div class="form-group full-width">
                     <label class="form-label" for="id_marca">Marca:</label>
-                    <select name="id_sesion" id="id_marca" class="form-control">
+                    <select name="id_marca" id="id_marca" class="form-control">
                         <option value="1">Nike</option>
                         <option value="2">Adidas</option>
                         <option value="3">Puma</option>
