@@ -193,21 +193,20 @@ if ($id_sesion == 1 || $id_sesion == 2 || $id_sesion == 3) {
 
 <?php
 
-/*if(isset($_POST['agregar'])){
+if(isset($_POST['btn4'])){
 
-	$agregar=$_POST['agregar'];
-	if($agregar=="REGISTRAR")
+	$btn4=$_POST['btn4'];
+	if($btn4=="REGISTRAR")
 	{
 
-$ci=$_POST['ci'];
+$id_producto=$_POST['id_producto'];
 // echo "el nuevo ci es: ".$ci;
-$nombre=$_POST['nombre'];
-$apellido=$_POST['apellido'];
-$passsword=$_POST['password'];
-$email=$_POST['email'];
-$nro_celular=$_POST['nro_celular'];
-$direccion=$_POST['direccion'];
-$id_sesion=$_POST['id_sesion'];
+$color=$_POST['color'];
+$stock=$_POST['stock'];
+$talla=$_POST['talla'];
+$descrip_producto=$_POST['decrip_producto'];
+$precio_unitario=$_POST['precio_unitario'];
+$id_marca=$_POST['id_marca'];
 //$contrasena=$_POST['contrasena'];
 
 // codigo para guardar imagen
@@ -236,15 +235,15 @@ echo "la extension del archivo es: ".$extension;*/
 
         }*/
 // primer paso para el query
-/*$consulta="INSERT INTO usuario (ci, nombre, apellido, password, email, nro_celular, direccion, id_sesion) VALUES ('$ci','$nombre', '$apellido', '$passsword', '$email' ,'$nro_celular', '$direccion', '$id_sesion')";
+$consulta="INSERT INTO producto (id_producto, color, stock, talla, descrip_producto, precio_unitario, id_marca) VALUES ('$id_producto','$color',
+ '$stock', '$talla', '$descrip_producto' ,'$precio_unitario', '$id_marca')";
 //segundo paso
 mysqli_query($conexion,$consulta);
 
-echo "<script>alert('usuario registrado de manera correcta')</script>";
+echo "<script>alert('producto registrado de manera correcta')</script>";
    echo '<script>window.location="../administracion.php"</script>';
-*/
 
-//}
-//}
-//
+
+}
+}
 ?>

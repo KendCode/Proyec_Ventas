@@ -202,8 +202,14 @@
 					<input type="text" name="direccion" id="direccion" class="form-control">
 				</div>
 				<div class="form-group full-width">
-					<label class="form-label" for="id_sesion">ID Sesión:</label>
-					<input type="number" name="id_sesion" id="id_sesion" class="form-control">
+					<label class="form-label" for="id_sesion">Rol</label>
+					<select name="id_sesion" id="id_sesion" class="form-control">
+						<option value="5">Cliente</option>
+						<option value="4">Empleado</option>
+						<option value="3">Tecnico</option>
+						<option value="2">Administrador</option>
+						<option value="1">Gerente</option>
+					</select>
 				</div>
 				<!-- <br> FOTOGRAFIA
 <input type="file" name="archivo"> -->
