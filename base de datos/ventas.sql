@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-09-2024 a las 01:23:09
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 24-09-2024 a las 05:57:24
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -95,14 +95,15 @@ CREATE TABLE `producto` (
 INSERT INTO `producto` (`id_producto`, `color`, `stock`, `talla`, `descrip_producto`, `precio_unitario`, `id_marca`) VALUES
 (1, 'Negro', 50, 42, 'Zapatilla running', 100, 1),
 (2, 'Blanco', 30, 41, 'Zapatilla de tenis', 120, 2),
-(3, 'Rojo', 70, 40, 'Zapatilla de baloncesto', 150, 3),
 (4, 'Azul', 90, 43, 'Zapatilla de fútbol', 80, 4),
 (5, 'Verde', 60, 44, 'Zapatilla de trekking', 110, 1),
 (6, 'Gris', 40, 42, 'Zapatilla de entrenamiento', 90, 2),
 (7, 'Amarillo', 20, 39, 'Zapatilla casual', 70, 3),
 (8, 'Naranja', 35, 40, 'Zapatilla de crossfit', 130, 4),
-(9, 'Rosa', 25, 41, 'Zapatilla para correr', 95, 2),
-(10, 'Morado', 55, 43, 'Zapatilla de ciclismo', 140, 3);
+(9, 'AZUL', 25, 41, 'Zapatilla para correr', 95, 2),
+(123, 'ROJO', 32, 39, '', 35, 3),
+(321, 'naranja', 21, 25, '', 100, 4),
+(555, 'lila', 60, 25, 'zapatillas locas', 25, 2);
 
 -- --------------------------------------------------------
 
@@ -123,14 +124,12 @@ CREATE TABLE `producto_pedido` (
 INSERT INTO `producto_pedido` (`id_pedido`, `id_producto`, `cantidad`) VALUES
 (1, 1, 2),
 (2, 2, 1),
-(3, 3, 3),
 (4, 4, 1),
 (5, 5, 2),
 (6, 6, 4),
 (7, 7, 1),
 (8, 8, 2),
-(9, 9, 3),
-(10, 10, 1);
+(9, 9, 3);
 
 -- --------------------------------------------------------
 
@@ -152,8 +151,7 @@ INSERT INTO `sesion` (`id_sesion`, `descrip_sesion`) VALUES
 (2, 'administrador'),
 (3, 'tecnico'),
 (4, 'empleado'),
-(5, 'cliente'),
-(6, 'invitado');
+(5, 'cliente');
 
 -- --------------------------------------------------------
 
@@ -178,15 +176,20 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`ci`, `nombre`, `apellido`, `password`, `email`, `nro_celular`, `direccion`, `id_sesion`) VALUES
 (1, 'Juan', 'Perez', 'password1', 'juan.perez@example.com', 1234567890, 'Calle Falsa 123', 5),
-(2, 'Maria', 'Lopez', 'password2', 'maria.lopez@example.com', 2147483647, 'Avenida Siempre Viva 456', 5),
 (3, 'Carlos', 'Gomez', 'password3', 'carlos.gomez@example.com', 2147483647, 'Calle Central 789', 4),
 (4, 'Laura', 'Martinez', 'password4', 'laura.martinez@example.com', 987654321, 'Boulevard del Sol 321', 3),
 (5, 'Ana', 'Gonzalez', 'password5', 'ana.gonzalez@example.com', 555555555, 'Calle Luna 111', 2),
 (6, 'Pedro', 'Sanchez', 'password6', 'pedro.sanchez@example.com', 666666666, 'Avenida Estrella 222', 1),
-(7, 'Luis', 'Ramirez', 'password7', 'luis.ramirez@example.com', 777777777, 'Calle Mar 333', 6),
+(7, 'Luis', 'Ramirez', 'password7', 'luis.ramirez@example.com', 77725258, 'Calle Mar 333', 5),
 (8, 'Sofia', 'Fernandez', 'password8', 'sofia.fernandez@example.com', 888888888, 'Avenida Oceano 444', 5),
 (9, 'David', 'Hernandez', 'password9', 'david.hernandez@example.com', 999999999, 'Calle Cielo 555', 4),
-(10, 'Lucia', 'Diaz', 'password10', 'lucia.diaz@example.com', 1010101010, 'Boulevard Tierra 666', 3);
+(201543, 'Robert', 'crash', '545656', 'robert@gmail.com', 63544978, 'av. ballivian', 5),
+(1002356, 'RUDY', 'LOPEZ', '567', 'kenderacademico@gmail.com', 63521551, 'calle YUOY', 5),
+(7997465, 'ariana', 'poma', '5555557777', 'ari@gmail.com', 2147483647, 'calle keke', 5),
+(9938169, 'Kender', 'Mendoza', '123', 'mendozabryan004@gmail.com', 60539021, 'avenida nestor galindo', 1),
+(548121545, 'Ramiro', 'patzi', '456123', 'ram@gmail.com', 754151653, 'calle kekerrr', 5),
+(999888777, 'luis', 'mamani', '987', 'ryzenproducciones@gmail.com', 65841586, 'calle jajaja', 4),
+(2147483647, 'LOCO', 'RELOCO', '3515874961', 'cumbiakalienteoficial@gmail.co', 165415454, 'ZONA KORI', 4);
 
 --
 -- Índices para tablas volcadas

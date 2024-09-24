@@ -1,6 +1,6 @@
 <?php
 
-include("conexion/conexion.php");
+include ("conexion/conexion.php");
 //include("destroy.php");
 ?>
 <!DOCTYPE html>
