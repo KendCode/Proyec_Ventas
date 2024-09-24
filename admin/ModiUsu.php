@@ -111,7 +111,7 @@ while($fila=mysqli_fetch_array($respuesta))
 
 	<br>
 APELLIDO:
-<input type="text" name="apelldio" value="<?php echo $fila['apellido'];?>">
+<input type="text" name="apellido" value="<?php echo $fila['apellido'];?>">
 
 
 

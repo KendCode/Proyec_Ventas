@@ -1,0 +1,91 @@
+/* Estilos generales */
+:root{
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--second-bg-color); /* Color de fondo de la página */
+    color: var(--second-bg-color); /* Color de texto principal */
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: var(--main-color); /* Color de fondo de la barra de navegación */
+
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--bg-color);
+}
+
+/* Sección Acerca de Mí */
+/* Color de fondo de la sección Acerca de Mí */
+#acercade {
+    background-color: var(--bg-color); 
+    color: var(--main-color);
+}
+
+/* Sección Habilidades */
+/* todo fondo habilidades */
+#habilidades {
+    background-color: var(--second-bg-color); 
+    color: var(--text-color);
+}
+/* progreso de habilidades */
+.progress-bar {
+    background-color: var(--main-color); 
+}
+
+/*todo Sección Proyectos */
+
+#proyectos {
+    background-color: var(--second-bg-color); 
+}
+/* Color de fondo de las tarjetas */
+.card {
+    background-color: var(--second-bg-color); 
+}
+/* Color del título de la tarjeta */
+.card-title {
+    color: #007bff; 
+}
+/* Color del texto de la tarjeta */
+.card-text {
+    color: var(--main-color); 
+}
+
+/* Sección Contacto */
+/* fondo de contacto */
+#contacto {
+    background-color: var(--second-bg-color);
+    color: var(--text-color);
+}
+
+/* Formulario de contacto */
+/* Color de fondo de los campos de formulario */
+.form-control {
+    background-color: var(--text-color); 
+    
+}
+/* Color de fondo del botón de enviar */
+/* Color del borde del botón de enviar */
+.btn-primary {
+    background-color: #007bff; 
+    border-color: #007bff; 
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Color de fondo del botón de enviar al pasar el ratón por encima */
+    border-color: #0056b3; /* Color del borde del botón de enviar al pasar el ratón por encima */
+}
+footer{
+    background-color: var(--bg-color);
+}
