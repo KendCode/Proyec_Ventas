@@ -1,9 +1,10 @@
 <?php
 
 include("conexion/conexion.php");
-
-
-//include("bloqueo.php");
+include("bloqueo.php"); 
+// Desactivar la visualización de errores
+ini_set('display_errors', 0);
+error_reporting(0)
 ?>
 
 

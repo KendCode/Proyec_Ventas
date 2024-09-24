@@ -1,6 +1,7 @@
 <?php
 
 include("../conexion/conexion.php");
+include("../bloqueo.php"); 
 // Desactivar la visualización de errores
 ini_set('display_errors', 0);
 error_reporting(0);
@@ -14,6 +15,7 @@ error_reporting(0);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/main.css">
+	
 </head>
 
 <body>
