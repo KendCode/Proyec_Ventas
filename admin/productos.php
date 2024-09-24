@@ -34,7 +34,7 @@ error_reporting(0);
 					<figcaption class="text-center text-titles"><?php
                 			include("../conexion/conexion.php");
                 			session_start();
-                			echo "".$_SESSION['admin'];
+                			echo "<h2 class='display-4 fw-bolder'>".$_SESSION['admin']."</h2>";
                 		?></figcaption>
 				</figure>
 				<ul class="full-box list-unstyled text-center">
