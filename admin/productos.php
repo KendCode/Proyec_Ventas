@@ -1,7 +1,7 @@
 <?php
 
 include("../conexion/conexion.php");
-include("../bloqueo.php"); 
+include("bloqueo.php"); 
 // Desactivar la visualización de errores
 ini_set('display_errors', 0);
 error_reporting(0);
@@ -52,7 +52,6 @@ error_reporting(0);
 						<i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i>Panel
 					</a>
 				</li>
-				<li>
 				<li>
 					<a href="../admin/productos.php"><i class="zmdi zmdi-mall"></i> Productos</a>
 				</li>
