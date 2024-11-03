@@ -3,7 +3,7 @@
 include("../conexion/conexion.php");
 session_start();
 
-include("bloqueo.php");
+//include("bloqueo.php");
 ?>
 <html lang="es">
 <head>
