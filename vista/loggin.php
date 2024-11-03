@@ -1,6 +1,6 @@
 <?php
 
-include("conexion/conexion.php");
+include("../modelo/conexion/conexion.php");
 session_start();
 
 //include("bloqueo.php");
@@ -10,7 +10,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .vh-100 {
@@ -52,13 +52,13 @@ session_start();
                     <div class="card">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="../proyecDos/img/Kender.png"
+                                <img src="../assets/img/Kender.png"
                                      alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
 
-                                    <form action="control/control.php" method="post">
+                                    <form action="../modelo/control/control.php" method="post">
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                                             <span class="h1 fw-bold mb-0">Inicia Sesion</span>

@@ -1,10 +1,10 @@
 <?php
 
-include ("conexion/conexion.php");
-include("bloqueo.php"); 
+include ("../modelo/conexion/conexion.php");
+//include("bloqueo.php"); 
 // Desactivar la visualización de errores
-ini_set('display_errors', 0);
-error_reporting(0);
+//ini_set('display_errors', 0);
+//error_reporting(0);
 //include("destroy.php");
 ?>
 <!DOCTYPE html>
@@ -17,19 +17,19 @@ error_reporting(0);
     <meta name="author" content="" />
     <title>Ventas</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/principal.css" rel="stylesheet" />
-    <link href="css/ventas.css" rel="stylesheet" />
+    <link href="../assets/css/principal.css" rel="stylesheet" />
+    <link href="../assets/css/ventas.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="principal.php"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            <a class="navbar-brand" href="principal.php"><img src="../assets/img/navbar-logo.svg" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>

@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/principal.css" rel="stylesheet" />
+        <link href="assets/css/principal.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -32,7 +32,7 @@
                         <li class="nav-item"><a class="nav-link" href="#about">Historia</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contactos</a></li>
                         <li class="nav-item">
-                            <a href="../proyecDos/loggin.php" class="nav-link">
+                            <a href="vista/loggin.php" class="nav-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="masthead-subheading">BIENVENIDOS!</div>
                 <div class="masthead-heading text-uppercase">Encantado de conocerte</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="../proyecDos/loggin.php">INICIA SESION</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="vista/loggin.php">INICIA SESION</a>
             </div>
         </header>
         <!-- Services-->

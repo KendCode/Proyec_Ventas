@@ -22,7 +22,7 @@ $consulta= "DELETE FROM usuario WHERE usuario.ci = '$ci'";
 //segundo paso
 mysqli_query($conexion,$consulta);
 echo "<script>alert('usuario Eliminado de manera correcta')</script>";
-   echo '<script>window.location="../administracion.php"</script>';
+   echo '<script>window.location="../../vista/administracion.php"</script>';
 
 	}
 }
@@ -46,7 +46,7 @@ $consulta= "DELETE FROM producto WHERE producto.id_producto = '$id_producto'";
 //segundo paso
 mysqli_query($conexion,$consulta);
 echo "<script>alert('PRODUCTO Eliminado de manera correcta')</script>";
-   echo '<script>window.location="../administracion.php"</script>';
+   echo '<script>window.location="../../vista/administracion.php"</script>';
 
 	}
 }
@@ -79,7 +79,7 @@ $consulta="UPDATE usuario SET nombre = '$nombre', apellido = '$apellido', passwo
 mysqli_query($conexion,$consulta);
 
 echo "<script>alert('usuario modificado de manera correcta')</script>";
-   echo '<script>window.location="../administracion.php"</script>';
+   echo '<script>window.location="../../vista/administracion.php"</script>';
 
 	}
 }
@@ -110,7 +110,7 @@ $consulta="UPDATE producto SET color = '$color', stock = '$stock', talla ='$tall
 mysqli_query($conexion,$consulta);
 
 echo "<script>alert('usuario modificado de manera correcta')</script>";
-   echo '<script>window.location="../administracion.php"</script>';
+   echo '<script>window.location="../../vista/administracion.php"</script>';
 
 	}
 }
@@ -172,11 +172,11 @@ $nombre = $_POST['nombre']; // Asegúrate de que $nombre esté definido
 
 if ($id_sesion == 1 || $id_sesion == 2 || $id_sesion == 3) {
     $_SESSION['admin'] = $nombre;
-    echo '<script>window.location="../administracion.php"</script>';
+    echo '<script>window.location="../../vista/administracion.php"</script>';
 } elseif ($id_sesion == 4 || $id_sesion == 5) {
     if (!empty($nombre)) {
         $_SESSION['cli'] = $nombre; // Se guarda el nombre del cliente en la sesión
-        echo '<script>window.location="../ventas.php"</script>';
+        echo '<script>window.location="../../vista/ventas.php"</script>';
     } else {
         echo "El nombre no está definido.";
     }
@@ -241,7 +241,7 @@ $consulta="INSERT INTO producto (id_producto, color, stock, talla, descrip_produ
 mysqli_query($conexion,$consulta);
 
 echo "<script>alert('producto registrado de manera correcta')</script>";
-   echo '<script>window.location="../administracion.php"</script>';
+   echo '<script>window.location="../../vista/administracion.php"</script>';
 
 
 }

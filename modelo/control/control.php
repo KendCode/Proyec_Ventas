@@ -39,31 +39,31 @@ if($nombre==$resp['nombre'] && $contrasena==$resp['password'])
  if($resp['id_sesion']==1){
     session_start();
      $_SESSION['admin']= $nombre;
-    echo '<script>window.location="../administracion.php"</script>';
+    echo '<script>window.location="../../vista/administracion.php"</script>';
     
    
  }
  elseif($resp['id_sesion']==2){
     session_start();
     $_SESSION['admin']= $nombre;
-    echo '<script>window.location="../administracion.php"</script>';
+    echo '<script>window.location="../../vista/administracion.php"</script>';
     
     //echo "Usuario tipo Administrativo";
  }  
  elseif($resp['id_sesion']==3){
     session_start();
      $_SESSION['admin']= $nombre;
-    echo '<script>window.location="../administracion.php"</script>';
+    echo '<script>window.location="../../vista/administracion.php"</script>';
  }
  elseif($resp['id_sesion']==4){
     session_start();
     $_SESSION['cli']= $nombre;
-    echo '<script>window.location="../ventas.php"</script>';
+    echo '<script>window.location="../../vista/ventas.php"</script>';
  }
  elseif($resp['id_sesion']==5){
      session_start();
      $_SESSION['cli']= $nombre;
-     echo '<script>window.location="../ventas.php"</script>';
+     echo '<script>window.location="../vista/ventas.php"</script>';
  }
 //creamos la sesion
 //session_start();

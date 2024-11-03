@@ -171,7 +171,7 @@
 <body>
 	<div class="container">
 		<h3>FORMULARIO DE REGISTRO USUARIO</h3>
-		<form id="registroForm" action="../control/abm.php" method="post" enctype="multipart/form-data">
+		<form id="registroForm" action="../../modelo/control/abm.php" method="post" enctype="multipart/form-data">
 			<div class="form-row">
 				<div class="form-group">
 					<label class="form-label" for="ci">CI:</label>

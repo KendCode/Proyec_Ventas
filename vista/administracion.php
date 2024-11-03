@@ -1,7 +1,7 @@
 <?php
 
-include("conexion/conexion.php");
-include("bloqueo.php"); 
+include("../modelo/conexion/conexion.php");
+//include("bloqueo.php"); 
 // Desactivar la visualización de errores
 ini_set('display_errors', 0);
 error_reporting(0)
@@ -14,7 +14,7 @@ error_reporting(0)
 	<title>Administrador</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../proyecDos/admin/css/main.css">
+	<link rel="stylesheet" href="../admin/css/main.css">
 </head>
 <body>
     <!-- SideBar -->
@@ -31,7 +31,7 @@ error_reporting(0)
 					<img src="../proyecDos/admin/assets/avatars/AdminMaleAvatar.png" alt="UserIcon">
 					<figcaption class="text-center text-titles">
 						<?php
-                			include("conexion/conexion.php");
+                			include("../modelo/conexion/conexion.php");
                 			session_start();
                 			echo "<h2 class='display-4 fw-bolder'>".$_SESSION['admin']."</h2>";
                 		?>
