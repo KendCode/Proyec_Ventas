@@ -76,7 +76,7 @@ include("../modelo/conexion/conexion.php");
                     <div class="card h-100">
                         <!-- Product image -->
                         <img class="card-img-top" src="../assets/img/header-bg.jpg" alt="..." />
-                        <!-- Product details -->
+                        <!-- Product detalles -->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Nombre del producto -->
@@ -95,8 +95,6 @@ include("../modelo/conexion/conexion.php");
                                     <h6 class="fw_bolder"><?php echo $fila['descrip_producto']; ?></h6>
                                     <h6 class="fw_bolder"><?php echo $fila['talla']; ?></h6>
                                     <h6 class="fw_bolder"><?php echo $fila['precio_unitario']; ?></h6>
-        
-                               
                             </div>
                         </div>
                         <!-- Product actions -->
@@ -117,34 +115,38 @@ include("../modelo/conexion/conexion.php");
                         <!-- Sale badge -->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <!-- Product image -->
-                        <img class="card-img-top" src="img/tenis/img1.jpg" alt="..." />
-                        <!-- Product details -->
+                        <img class="card-img-top" src="../assets/img/tenis/img1.jpg" alt="..." />
+                        <!-- Product detalles -->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Special Item</h5>
-                                <!-- Product reviews -->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                </div>
-                                <!-- Product price -->
-                                <span class="text-muted text-decoration-line-through">$20.00</span>
-                                $18.00
+                                 <!-- Nombre del producto -->
+                                 <?php
+                                    $consulta = "SELECT * FROM producto WHERE id_producto = 4"; // Cambia '1' por el ID que deseas.
+
+                                    //$consulta = "SELECT * FROM producto";
+                                    //segunda paso 
+                                    $respuesta = mysqli_query($conexion, $consulta);
+                                    
+                                    // tercer paso
+                                    // 
+                                    while ($fila = mysqli_fetch_array($respuesta)) {
+                                ?>
+                                    <h6 class="fw-bolder"><?php echo $fila['color']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['descrip_producto']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['talla']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['precio_unitario']; ?></h6>
                             </div>
                         </div>
                         <!-- Product actions -->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
-                                <form action="carrito.php" method="post">
-                                    <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?> ">
-                                    <input type="submit" name="btn10" value="MODIFICAR" class="btn btn-success btn-raised btn-xs">
-                                </form>
+                            <a class="btn btn-outline-dark mt-auto" href="detalle_producto.php?id_producto=<?php echo $fila['id_producto']; ?>">Comprar</a>
+
                             </div>
                         </div>
+                        <?php
+                            }        
+                        ?>
                     </div>
                 </div>
                 <!-- Producto 3 -->
@@ -153,67 +155,77 @@ include("../modelo/conexion/conexion.php");
                         <!-- Sale badge -->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <!-- Product image -->
-                        <img class="card-img-top" src="img/tenis/img2.jpg" alt="..." />
+                        <img class="card-img-top" src="../assets/img/tenis/img2.jpg" alt="..." />
                         <!-- Product details -->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Sale Item</h5>
-                                <!-- Product price -->
-                                <span class="text-muted text-decoration-line-through">$50.00</span>
-                                $25.00
+                               <!-- Nombre del producto -->
+                               <?php
+                                    $consulta = "SELECT * FROM producto WHERE id_producto = 2"; // Cambia '1' por el ID que deseas.
+
+                                    //$consulta = "SELECT * FROM producto";
+                                    //segunda paso 
+                                    $respuesta = mysqli_query($conexion, $consulta);
+                                    
+                                    // tercer paso
+                                    // 
+                                    while ($fila = mysqli_fetch_array($respuesta)) {
+                                ?>
+                                    <h6 class="fw-bolder"><?php echo $fila['color']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['descrip_producto']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['talla']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['precio_unitario']; ?></h6>
+                                
+
                             </div>
                         </div>
+                        
                         <!-- Product actions -->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
-                                <form method="post" action="../registro.php">
-                                    <!-- Hidden Checkbox -->
-                                    <input type="checkbox" name="producto[]" value="tenis1" id="tenis1" style="display:none;" onclick="addToCart()">
-                                    <!-- Custom Button -->
-                                    <label for="tenis1" class="btn btn-outline-dark mt-auto">
-                                        Tenis 1
-                                    </label>
-                                </form>
+                            <a class="btn btn-outline-dark mt-auto" href="detalle_producto.php?id_producto=<?php echo $fila['id_producto']; ?>">Comprar</a>
                             </div>
-                        </div>
+                        </div> 
+                        <?php
+                                    }
+                                    ?>
                     </div>
                 </div>
                 <!-- Producto 4 -->
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image -->
-                        <img class="card-img-top" src="img/tenis/img3.jpg" alt="..." />
+                        <img class="card-img-top" src="../assets/img/tenis/img3.jpg" alt="..." />
                         <!-- Product details -->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Popular Item</h5>
-                                <!-- Product reviews -->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                </div>
-                                <!-- Product price -->
-                                $40.00
+                                <!-- Nombre del producto -->
+                               <?php
+                                    $consulta = "SELECT * FROM producto WHERE id_producto = 5"; // Cambia '1' por el ID que deseas.
+
+                                    //$consulta = "SELECT * FROM producto";
+                                    //segunda paso 
+                                    $respuesta = mysqli_query($conexion, $consulta);
+                                    
+                                    // tercer paso
+                                    // 
+                                    while ($fila = mysqli_fetch_array($respuesta)) {
+                                ?>
+                                    <h6 class="fw-bolder"><?php echo $fila['color']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['descrip_producto']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['talla']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['precio_unitario']; ?></h6>
                             </div>
                         </div>
                         <!-- Product actions -->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
-                                <form method="post" action="../registro.php">
-                                    <!-- Hidden Checkbox -->
-                                    <input type="checkbox" name="producto[]" value="tenis1" id="tenis1" style="display:none;" onclick="addToCart()">
-                                    <!-- Custom Button -->
-                                    <label for="tenis1" class="btn btn-outline-dark mt-auto">
-                                        Tenis 1
-                                    </label>
-                                </form>
+                            <a class="btn btn-outline-dark mt-auto" href="detalle_producto.php?id_producto=<?php echo $fila['id_producto']; ?>">Comprar</a>
                             </div>
-                        </div>
+                        </div> 
+                        <?php
+                                    }
+                                    ?>
                     </div>
                 </div>
                 <!-- Producto 5 -->
@@ -222,103 +234,140 @@ include("../modelo/conexion/conexion.php");
                         <!-- Sale badge -->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <!-- Product image -->
-                        <img class="card-img-top" src="../../img/tenis/img4.jpg" alt="..." />
+                        <img class="card-img-top" src="../assets/img/tenis/img4.jpg" alt="..." />
                         <!-- Product details -->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Sale Item</h5>
-                                <!-- Product price -->
-                                <span class="text-muted text-decoration-line-through">$50.00</span>
-                                $25.00
+                                <!-- Nombre del producto -->
+                               <?php
+                                    $consulta = "SELECT * FROM producto WHERE id_producto = 6"; // Cambia '1' por el ID que deseas.
+
+                                    //$consulta = "SELECT * FROM producto";
+                                    //segunda paso 
+                                    $respuesta = mysqli_query($conexion, $consulta);
+                                    
+                                    // tercer paso
+                                    // 
+                                    while ($fila = mysqli_fetch_array($respuesta)) {
+                                ?>
+                                    <h6 class="fw-bolder"><?php echo $fila['color']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['descrip_producto']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['talla']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['precio_unitario']; ?></h6>
                             </div>
                         </div>
                         <!-- Product actions -->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
-                                <form method="post" action="registro.php">
-                                    <input type="hidden" name="product_name" value="Sale Item">
-                                    <input type="hidden" name="product_price" value="25.00">
-                                    <button class="btn btn-outline-dark mt-auto" type="button" name="add_to_cart" onclick="addToCart()">Add to cart</button>
-                                </form>
+                            <a class="btn btn-outline-dark mt-auto" href="detalle_producto.php?id_producto=<?php echo $fila['id_producto']; ?>">Comprar</a>
                             </div>
                         </div>
+                        <?php
+                                    }
+                        ?>
                     </div>
                 </div>
                 <!-- Producto 6 -->
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image -->
-                        <img class="card-img-top" src="img/tenis/img5.jpg" alt="..." />
+                        <img class="card-img-top" src="../assets/img/tenis/img5.jpg" alt="..." />
                         <!-- Product details -->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Fancy Product</h5>
-                                <!-- Product price -->
-                                $120.00 - $280.00
+                               <!-- Nombre del producto -->
+                               <?php
+                                    $consulta = "SELECT * FROM producto WHERE id_producto = 7"; // Cambia '1' por el ID que deseas.
+
+                                    //$consulta = "SELECT * FROM producto";
+                                    //segunda paso 
+                                    $respuesta = mysqli_query($conexion, $consulta);
+                                    
+                                    // tercer paso
+                                    // 
+                                    while ($fila = mysqli_fetch_array($respuesta)) {
+                                ?>
+                                    <h6 class="fw-bolder"><?php echo $fila['color']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['descrip_producto']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['talla']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['precio_unitario']; ?></h6>
                             </div>
                         </div>
                         <!-- Product actions -->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
-                                <form method="post" action="registro.php">
-                                    <input type="hidden" name="product_name" value="Fancy Product">
-                                    <input type="hidden" name="product_price" value="120.00">
-                                    <button class="btn btn-outline-dark mt-auto" type="button" name="add_to_cart" onclick="addToCart()">View options</button>
-                                </form>
+                            <a class="btn btn-outline-dark mt-auto" href="detalle_producto.php?id_producto=<?php echo $fila['id_producto']; ?>">Comprar</a>
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image -->
-                        <img class="card-img-top" src="img/tenis/img6.jpg" alt="..." />
+                        <img class="card-img-top" src="../assets/img/tenis/img6.jpg" alt="..." />
                         <!-- Product details -->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Fancy Product</h5>
-                                <!-- Product price -->
-                                $120.00 - $280.00
+                                <!-- Nombre del producto -->
+                               <?php
+                                    $consulta = "SELECT * FROM producto WHERE id_producto = 8"; // Cambia '1' por el ID que deseas.
+
+                                    //$consulta = "SELECT * FROM producto";
+                                    //segunda paso 
+                                    $respuesta = mysqli_query($conexion, $consulta);
+                                    
+                                    // tercer paso
+                                    // 
+                                    while ($fila = mysqli_fetch_array($respuesta)) {
+                                ?>
+                                    <h6 class="fw-bolder"><?php echo $fila['color']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['descrip_producto']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['talla']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['precio_unitario']; ?></h6>
                             </div>
                         </div>
                         <!-- Product actions -->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
-                                <form method="post" action="registro.php">
-                                    <input type="hidden" name="product_name" value="Fancy Product">
-                                    <input type="hidden" name="product_price" value="120.00">
-                                    <button class="btn btn-outline-dark mt-auto" type="button" name="add_to_cart" onclick="addToCart()">View options</button>
-                                </form>
+                            <a class="btn btn-outline-dark mt-auto" href="detalle_producto.php?id_producto=<?php echo $fila['id_producto']; ?>">Comprar</a>
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image -->
-                        <img class="card-img-top" src="img/tenis/img7.jpg" alt="..." />
+                        <img class="card-img-top" src="../assets/img/tenis/img7.jpg" alt="..." />
                         <!-- Product details -->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Fancy Product</h5>
-                                <!-- Product price -->
-                                $120.00 - $280.00
+                                <!-- Nombre del producto -->
+                               <?php
+                                    $consulta = "SELECT * FROM producto WHERE id_producto = 9"; // Cambia '1' por el ID que deseas.
+
+                                    //$consulta = "SELECT * FROM producto";
+                                    //segunda paso 
+                                    $respuesta = mysqli_query($conexion, $consulta);
+                                    
+                                    // tercer paso
+                                    // 
+                                    while ($fila = mysqli_fetch_array($respuesta)) {
+                                ?>
+                                    <h6 class="fw-bolder"><?php echo $fila['color']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['descrip_producto']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['talla']; ?></h6>
+                                    <h6 class="fw_bolder"><?php echo $fila['precio_unitario']; ?></h6>
                             </div>
                         </div>
                         <!-- Product actions -->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
-                                <form method="post" action="registro.php">
-                                    <input type="hidden" name="product_name" value="Fancy Product">
-                                    <input type="hidden" name="product_price" value="120.00">
-                                    <button class="btn btn-outline-dark mt-auto" type="button" name="add_to_cart" onclick="addToCart()">View options</button>
-                                </form>
+                            <a class="btn btn-outline-dark mt-auto" href="detalle_producto.php?id_producto=<?php echo $fila['id_producto']; ?>">Comprar</a>
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
