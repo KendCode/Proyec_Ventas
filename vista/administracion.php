@@ -14,7 +14,7 @@ error_reporting(0)
 	<title>Administrador</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../admin/css/main.css">
+	<link rel="stylesheet" href="admin/css/main.css">
 </head>
 <body>
     <!-- SideBar -->
@@ -28,7 +28,7 @@ error_reporting(0)
 			<!-- SideBar User info -->
 			<div class="full-box dashboard-sideBar-UserInfo">
 				<figure class="full-box">
-					<img src="../proyecDos/admin/assets/avatars/AdminMaleAvatar.png" alt="UserIcon">
+					<img src="admin/assets/avatars/AdminMaleAvatar.png" alt="UserIcon">
 					<figcaption class="text-center text-titles">
 						<?php
                 			include("../modelo/conexion/conexion.php");
@@ -54,10 +54,10 @@ error_reporting(0)
 				</li>
 				<li>
 						<li>
-							<a href="../proyecDos/admin/productos.php"><i class="zmdi zmdi-mall"></i>  Productos</a>
+							<a href="admin/productos.php"><i class="zmdi zmdi-mall"></i>  Productos</a>
 						</li>
 						<li>
-							<a href="../proyecDos/admin/usuarios.php"><i class="zmdi zmdi-account"></i>  Usuarios</a>
+							<a href="admin/usuarios.php"><i class="zmdi zmdi-account"></i>  Usuarios</a>
 						</li>
 					
 				</li>
