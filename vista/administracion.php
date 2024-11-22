@@ -39,7 +39,7 @@ error_reporting(0)
 				</figure>
 				<ul class="full-box list-unstyled text-center">
 					<li>
-						<a href="../proyecDos/principal.php" title="Salir del sistema" class="btn-exit-system">
+						<a href="../index.php" title="Salir del sistema" class="btn-exit-system">
 							<i class="zmdi zmdi-power"></i>
 						</a>
 					</li>
